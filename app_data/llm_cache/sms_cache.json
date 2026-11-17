@@ -1,0 +1,1354 @@
+{
+ "0739a7f0472ee4d218e96750": {
+  "attempts": 1,
+  "cell_id": "S1-recharge_cashback",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "we miss you",
+    "english_gloss": "Nodi misses you! 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "নদী আপনাকে মিস করছে! ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "নদী-তে ফিরে আসুন: ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   },
+   {
+    "angle": "gift framing",
+    "english_gloss": "A welcome-back gift: 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "ফিরে আসার উপহার: ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   }
+  ]
+ },
+ "0d789ea01e9f1de07e6b12e8": {
+  "attempts": 1,
+  "cell_id": "S2-bundle_discount",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "warm welcome",
+    "english_gloss": "Welcome to Nodi! Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "নদী-তে স্বাগতম! কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   },
+   {
+    "angle": "new-customer gift",
+    "english_gloss": "Nodi's gift for new customers: Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "নতুন গ্রাহকের জন্য নদী-র উপহার: কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   },
+   {
+    "angle": "good start",
+    "english_gloss": "Make a great start with Nodi: Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "নদী-র সাথে শুরুটা হোক দারুণ: কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   }
+  ]
+ },
+ "0ff8ea03a93f1681135b2b70": {
+  "attempts": 1,
+  "cell_id": "S5-recharge_cashback",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "gentle check-in",
+    "english_gloss": "Haven't seen you in a while! 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "অনেকদিন দেখা নেই! ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   },
+   {
+    "angle": "plain reminder",
+    "english_gloss": "Nodi reminder: 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "নদী-র রিমাইন্ডার: ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "আবার নদী-তে আসুন: ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   }
+  ]
+ },
+ "13049cece378a4888a7b3be3": {
+  "attempts": 1,
+  "cell_id": "S1-tenure_reward",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "we miss you",
+    "english_gloss": "We miss you at Nodi! 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "We miss you at Nodi! 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "Come back to Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   },
+   {
+    "angle": "gift framing",
+    "english_gloss": "A welcome-back gift from Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "A welcome-back gift from Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   }
+  ]
+ },
+ "130d456d18bc98664a2d8005": {
+  "attempts": 1,
+  "cell_id": "S5-bundle_discount",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "gentle check-in",
+    "english_gloss": "Haven't seen you in a while! Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "অনেকদিন দেখা নেই! কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   },
+   {
+    "angle": "plain reminder",
+    "english_gloss": "Nodi reminder: Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "নদী-র রিমাইন্ডার: কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "আবার নদী-তে আসুন: কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   }
+  ]
+ },
+ "16053f31a10305a7be85b4d5": {
+  "attempts": 1,
+  "cell_id": "S3-bonus_data",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "personal pick",
+    "english_gloss": "Just for you: 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "শুধু আপনার জন্য: ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you, from Nodi: 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "নদী-র পক্ষ থেকে আপনার জন্য: ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   },
+   {
+    "angle": "stay connected",
+    "english_gloss": "Stay connected with Nodi: 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "নদী-র সাথে যুক্ত থাকুন: ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   }
+  ]
+ },
+ "1757f01ddea90240f1563083": {
+  "attempts": 1,
+  "cell_id": "S8-tenure_reward",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "small extra",
+    "english_gloss": "A little extra from Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "A little extra from Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you from Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "For you from Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   },
+   {
+    "angle": "bonus framing",
+    "english_gloss": "Nodi bonus: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "Nodi bonus: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   }
+  ]
+ },
+ "198e8d95e6a0a87ac43a11d6": {
+  "attempts": 1,
+  "cell_id": "S5-bundle_discount",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "gentle check-in",
+    "english_gloss": "Haven't seen you in a while! Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "Haven't seen you in a while! Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   },
+   {
+    "angle": "plain reminder",
+    "english_gloss": "Nodi reminder: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "Nodi reminder: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "Come back to Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   }
+  ]
+ },
+ "1a11c902cc9932d0c65945b0": {
+  "attempts": 1,
+  "cell_id": "S8-recharge_cashback",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "small extra",
+    "english_gloss": "A little extra from Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "A little extra from Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you from Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "For you from Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   },
+   {
+    "angle": "bonus framing",
+    "english_gloss": "Nodi bonus: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "Nodi bonus: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   }
+  ]
+ },
+ "1c5fdcbcd7b4a9cd70d0ad41": {
+  "attempts": 1,
+  "cell_id": "S3-tenure_reward",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "personal pick",
+    "english_gloss": "Just for you: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "Just for you: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you, from Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "For you, from Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   },
+   {
+    "angle": "stay connected",
+    "english_gloss": "Stay connected with Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "Stay connected with Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   }
+  ]
+ },
+ "1d1b32178c5a96e841285c0c": {
+  "attempts": 1,
+  "cell_id": "S4-recharge_cashback",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "loyalty thanks",
+    "english_gloss": "Thank you for staying with Nodi! 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "নদী-র সাথে থাকার জন্য ধন্যবাদ! ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   },
+   {
+    "angle": "simple thanks",
+    "english_gloss": "A thank-you from Nodi: 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "নদী-র পক্ষ থেকে ধন্যবাদ: ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   },
+   {
+    "angle": "you matter",
+    "english_gloss": "You are special to us: 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "আপনি আমাদের কাছে বিশেষ: ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   }
+  ]
+ },
+ "1d46ea8d4b484198e61f20e1": {
+  "attempts": 1,
+  "cell_id": "S8-bundle_discount",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "small extra",
+    "english_gloss": "A little extra from Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "A little extra from Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you from Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "For you from Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   },
+   {
+    "angle": "bonus framing",
+    "english_gloss": "Nodi bonus: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "Nodi bonus: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   }
+  ]
+ },
+ "27d01c635fe36e1660fc2c63": {
+  "attempts": 1,
+  "cell_id": "S1-bundle_discount",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "we miss you",
+    "english_gloss": "We miss you at Nodi! Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "We miss you at Nodi! Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "Come back to Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   },
+   {
+    "angle": "gift framing",
+    "english_gloss": "A welcome-back gift from Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "A welcome-back gift from Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   }
+  ]
+ },
+ "3020437eb152f89e6e566443": {
+  "attempts": 1,
+  "cell_id": "S5-recharge_cashback",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "gentle check-in",
+    "english_gloss": "Haven't seen you in a while! Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "Haven't seen you in a while! Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   },
+   {
+    "angle": "plain reminder",
+    "english_gloss": "Nodi reminder: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "Nodi reminder: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "Come back to Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   }
+  ]
+ },
+ "320694287c35df60b6c4d4bb": {
+  "attempts": 1,
+  "cell_id": "S2-bonus_data",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "warm welcome",
+    "english_gloss": "Welcome to Nodi! 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "নদী-তে স্বাগতম! ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   },
+   {
+    "angle": "new-customer gift",
+    "english_gloss": "Nodi's gift for new customers: 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "নতুন গ্রাহকের জন্য নদী-র উপহার: ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   },
+   {
+    "angle": "good start",
+    "english_gloss": "Make a great start with Nodi: 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "নদী-র সাথে শুরুটা হোক দারুণ: ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   }
+  ]
+ },
+ "3c877a1384864cfce77d0a83": {
+  "attempts": 1,
+  "cell_id": "S2-recharge_cashback",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "warm welcome",
+    "english_gloss": "Welcome to Nodi! 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "নদী-তে স্বাগতম! ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   },
+   {
+    "angle": "new-customer gift",
+    "english_gloss": "Nodi's gift for new customers: 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "নতুন গ্রাহকের জন্য নদী-র উপহার: ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   },
+   {
+    "angle": "good start",
+    "english_gloss": "Make a great start with Nodi: 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "নদী-র সাথে শুরুটা হোক দারুণ: ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   }
+  ]
+ },
+ "3f93ade5c6339feb50c1c2fb": {
+  "attempts": 1,
+  "cell_id": "S8-bundle_discount",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "small extra",
+    "english_gloss": "A little extra from Nodi: Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "নদী-র পক্ষ থেকে একটু বাড়তি: কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you from Nodi: Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "আপনার জন্য নদী থেকে: কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   },
+   {
+    "angle": "bonus framing",
+    "english_gloss": "Nodi bonus: Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "নদী বোনাস: কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   }
+  ]
+ },
+ "475080fbd64aa6b808768ae2": {
+  "attempts": 1,
+  "cell_id": "S8-bonus_data",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "small extra",
+    "english_gloss": "A little extra from Nodi: 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "নদী-র পক্ষ থেকে একটু বাড়তি: ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you from Nodi: 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "আপনার জন্য নদী থেকে: ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   },
+   {
+    "angle": "bonus framing",
+    "english_gloss": "Nodi bonus: 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "নদী বোনাস: ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   }
+  ]
+ },
+ "511d882643908bb3e874a8fc": {
+  "attempts": 1,
+  "cell_id": "S3-bundle_discount",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "personal pick",
+    "english_gloss": "Just for you: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "Just for you: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you, from Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "For you, from Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   },
+   {
+    "angle": "stay connected",
+    "english_gloss": "Stay connected with Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "Stay connected with Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   }
+  ]
+ },
+ "5c50fbefc23f19ad58489ca5": {
+  "attempts": 1,
+  "cell_id": "S5-bonus_data",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "gentle check-in",
+    "english_gloss": "Haven't seen you in a while! 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "অনেকদিন দেখা নেই! ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   },
+   {
+    "angle": "plain reminder",
+    "english_gloss": "Nodi reminder: 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "নদী-র রিমাইন্ডার: ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "আবার নদী-তে আসুন: ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   }
+  ]
+ },
+ "6060f7fc5d91a708ba710516": {
+  "attempts": 1,
+  "cell_id": "S1-recharge_cashback",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "we miss you",
+    "english_gloss": "We miss you at Nodi! Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "We miss you at Nodi! Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "Come back to Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   },
+   {
+    "angle": "gift framing",
+    "english_gloss": "A welcome-back gift from Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "A welcome-back gift from Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   }
+  ]
+ },
+ "60757e56c6a06f530619b019": {
+  "attempts": 1,
+  "cell_id": "S3-bundle_discount",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "personal pick",
+    "english_gloss": "Just for you: Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "শুধু আপনার জন্য: কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you, from Nodi: Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "নদী-র পক্ষ থেকে আপনার জন্য: কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   },
+   {
+    "angle": "stay connected",
+    "english_gloss": "Stay connected with Nodi: Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "নদী-র সাথে যুক্ত থাকুন: কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   }
+  ]
+ },
+ "61fc8a0d02f902d67b15248c": {
+  "attempts": 1,
+  "cell_id": "S1-bonus_data",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "we miss you",
+    "english_gloss": "Nodi misses you! 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "নদী আপনাকে মিস করছে! ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "নদী-তে ফিরে আসুন: ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   },
+   {
+    "angle": "gift framing",
+    "english_gloss": "A welcome-back gift: 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "ফিরে আসার উপহার: ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   }
+  ]
+ },
+ "69f58f6168ab026e56c30700": {
+  "attempts": 1,
+  "cell_id": "S7-reminder",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "helpful tip",
+    "english_gloss": "Nodi tip: Data 1GB, 7 days, only Tk59. Dial *121*1# to buy. STOP: 21212",
+    "text": "Nodi tip: Data 1GB, 7 days, only Tk59. Dial *121*1# to buy. STOP: 21212"
+   },
+   {
+    "angle": "quick tip",
+    "english_gloss": "A quick tip from Nodi: Data 1GB, 7 days, only Tk59. Dial *121*1# to buy. STOP: 21212",
+    "text": "A quick tip from Nodi: Data 1GB, 7 days, only Tk59. Dial *121*1# to buy. STOP: 21212"
+   },
+   {
+    "angle": "stay online",
+    "english_gloss": "Stay online with Nodi: Data 1GB, 7 days, only Tk59. Dial *121*1# to buy. STOP: 21212",
+    "text": "Stay online with Nodi: Data 1GB, 7 days, only Tk59. Dial *121*1# to buy. STOP: 21212"
+   }
+  ]
+ },
+ "6c48445e14f19e89e14d774f": {
+  "attempts": 1,
+  "cell_id": "S5-tenure_reward",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "gentle check-in",
+    "english_gloss": "Haven't seen you in a while! 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "অনেকদিন দেখা নেই! ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   },
+   {
+    "angle": "plain reminder",
+    "english_gloss": "Nodi reminder: 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "নদী-র রিমাইন্ডার: ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "আবার নদী-তে আসুন: ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   }
+  ]
+ },
+ "6d88729aeb338376d8a7d9c3": {
+  "attempts": 1,
+  "cell_id": "S2-tenure_reward",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "warm welcome",
+    "english_gloss": "Welcome to Nodi! 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "নদী-তে স্বাগতম! ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   },
+   {
+    "angle": "new-customer gift",
+    "english_gloss": "Nodi's gift for new customers: 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "নতুন গ্রাহকের জন্য নদী-র উপহার: ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   },
+   {
+    "angle": "good start",
+    "english_gloss": "Make a great start with Nodi: 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "নদী-র সাথে শুরুটা হোক দারুণ: ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   }
+  ]
+ },
+ "7697ed752772f88d27987766": {
+  "attempts": 1,
+  "cell_id": "S4-tenure_reward",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "loyalty thanks",
+    "english_gloss": "Thank you for staying with Nodi! 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "নদী-র সাথে থাকার জন্য ধন্যবাদ! ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   },
+   {
+    "angle": "simple thanks",
+    "english_gloss": "A thank-you from Nodi: 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "নদী-র পক্ষ থেকে ধন্যবাদ: ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   },
+   {
+    "angle": "you matter",
+    "english_gloss": "You are special to us: 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "আপনি আমাদের কাছে বিশেষ: ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   }
+  ]
+ },
+ "8586ec194e8d469ca759db5e": {
+  "attempts": 1,
+  "cell_id": "S3-tenure_reward",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "personal pick",
+    "english_gloss": "Just for you: 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "শুধু আপনার জন্য: ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you, from Nodi: 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "নদী-র পক্ষ থেকে আপনার জন্য: ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   },
+   {
+    "angle": "stay connected",
+    "english_gloss": "Stay connected with Nodi: 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "নদী-র সাথে যুক্ত থাকুন: ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   }
+  ]
+ },
+ "89325eafff113428a627e8a6": {
+  "attempts": 1,
+  "cell_id": "S5-bonus_data",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "gentle check-in",
+    "english_gloss": "Haven't seen you in a while! 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "Haven't seen you in a while! 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   },
+   {
+    "angle": "plain reminder",
+    "english_gloss": "Nodi reminder: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "Nodi reminder: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "Come back to Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   }
+  ]
+ },
+ "9328109f5b6497e55a61fd5c": {
+  "attempts": 1,
+  "cell_id": "S8-tenure_reward",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "small extra",
+    "english_gloss": "A little extra from Nodi: 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "নদী-র পক্ষ থেকে একটু বাড়তি: ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you from Nodi: 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "আপনার জন্য নদী থেকে: ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   },
+   {
+    "angle": "bonus framing",
+    "english_gloss": "Nodi bonus: 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "নদী বোনাস: ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   }
+  ]
+ },
+ "969e95303e38a63bdf7d9a32": {
+  "attempts": 1,
+  "cell_id": "S4-bonus_data",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "loyalty thanks",
+    "english_gloss": "Thank you for staying with Nodi! 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "Thank you for staying with Nodi! 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   },
+   {
+    "angle": "simple thanks",
+    "english_gloss": "A thank-you from Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "A thank-you from Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   },
+   {
+    "angle": "you matter",
+    "english_gloss": "You are special to us: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "You are special to us: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   }
+  ]
+ },
+ "98e5d30f584136a88bbbbb0c": {
+  "attempts": 1,
+  "cell_id": "S2-tenure_reward",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "warm welcome",
+    "english_gloss": "Welcome to Nodi! 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "Welcome to Nodi! 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   },
+   {
+    "angle": "new-customer gift",
+    "english_gloss": "Nodi gift for new customers: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "Nodi gift for new customers: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   },
+   {
+    "angle": "good start",
+    "english_gloss": "Make a great start with Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "Make a great start with Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   }
+  ]
+ },
+ "9be7665916661ce7b73f3e5b": {
+  "attempts": 1,
+  "cell_id": "S4-recharge_cashback",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "loyalty thanks",
+    "english_gloss": "Thank you for staying with Nodi! Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "Thank you for staying with Nodi! Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   },
+   {
+    "angle": "simple thanks",
+    "english_gloss": "A thank-you from Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "A thank-you from Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   },
+   {
+    "angle": "you matter",
+    "english_gloss": "You are special to us: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "You are special to us: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   }
+  ]
+ },
+ "9e4def7e16531b7ff974dc3b": {
+  "attempts": 1,
+  "cell_id": "S1-bundle_discount",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "we miss you",
+    "english_gloss": "Nodi misses you! Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "নদী আপনাকে মিস করছে! কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "নদী-তে ফিরে আসুন: কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   },
+   {
+    "angle": "gift framing",
+    "english_gloss": "A welcome-back gift: Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "ফিরে আসার উপহার: কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   }
+  ]
+ },
+ "9f36a3dd41c12bc1e27835eb": {
+  "attempts": 1,
+  "cell_id": "S4-bundle_discount",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "loyalty thanks",
+    "english_gloss": "Thank you for staying with Nodi! Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "নদী-র সাথে থাকার জন্য ধন্যবাদ! কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   },
+   {
+    "angle": "simple thanks",
+    "english_gloss": "A thank-you from Nodi: Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "নদী-র পক্ষ থেকে ধন্যবাদ: কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   },
+   {
+    "angle": "you matter",
+    "english_gloss": "You are special to us: Combo L: 8 GB + 200 minutes, 30 days, Tk 244 (was 349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "আপনি আমাদের কাছে বিশেষ: কম্বো এল: ৮ জিবি + ২০০ মিনিট, ৩০ দিন, ২৪৪ টাকা (আগে ৩৪৯)। ৭ দিনের মধ্যে ডায়াল *121*5# STOP: 21212"
+   }
+  ]
+ },
+ "b155203eb3765761e4d93a72": {
+  "attempts": 1,
+  "cell_id": "S2-bonus_data",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "warm welcome",
+    "english_gloss": "Welcome to Nodi! 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "Welcome to Nodi! 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   },
+   {
+    "angle": "new-customer gift",
+    "english_gloss": "Nodi gift for new customers: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "Nodi gift for new customers: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   },
+   {
+    "angle": "good start",
+    "english_gloss": "Make a great start with Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "Make a great start with Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   }
+  ]
+ },
+ "c3740d861f52d990fc703907": {
+  "attempts": 1,
+  "cell_id": "S1-bonus_data",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "we miss you",
+    "english_gloss": "We miss you at Nodi! 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "We miss you at Nodi! 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "Come back to Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   },
+   {
+    "angle": "gift framing",
+    "english_gloss": "A welcome-back gift from Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "A welcome-back gift from Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   }
+  ]
+ },
+ "c5481e8e59ab30f9dd300f4c": {
+  "attempts": 1,
+  "cell_id": "S4-bonus_data",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "loyalty thanks",
+    "english_gloss": "Thank you for staying with Nodi! 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "নদী-র সাথে থাকার জন্য ধন্যবাদ! ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   },
+   {
+    "angle": "simple thanks",
+    "english_gloss": "A thank-you from Nodi: 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "নদী-র পক্ষ থেকে ধন্যবাদ: ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   },
+   {
+    "angle": "you matter",
+    "english_gloss": "You are special to us: 2 GB free data, valid 7 days. To get it, dial *121*2# STOP: 21212",
+    "text": "আপনি আমাদের কাছে বিশেষ: ২ জিবি ফ্রি ডেটা, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*2# STOP: 21212"
+   }
+  ]
+ },
+ "c920190826dec6139f55729c": {
+  "attempts": 1,
+  "cell_id": "S8-recharge_cashback",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "small extra",
+    "english_gloss": "A little extra from Nodi: 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "নদী-র পক্ষ থেকে একটু বাড়তি: ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you from Nodi: 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "আপনার জন্য নদী থেকে: ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   },
+   {
+    "angle": "bonus framing",
+    "english_gloss": "Nodi bonus: 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "নদী বোনাস: ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   }
+  ]
+ },
+ "ca089ffe6c1493b533c49c84": {
+  "attempts": 1,
+  "cell_id": "S7-reminder",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "helpful tip",
+    "english_gloss": "Nodi tip: 1 GB data, 7 days, only Tk 59. To buy, dial *121*1# STOP: 21212",
+    "text": "নদী-র টিপস: ১ জিবি ডেটা, ৭ দিন, মাত্র ৫৯ টাকা। কিনতে ডায়াল করুন *121*1# STOP: 21212"
+   },
+   {
+    "angle": "quick tip",
+    "english_gloss": "A small tip from Nodi: 1 GB data, 7 days, only Tk 59. To buy, dial *121*1# STOP: 21212",
+    "text": "নদী থেকে ছোট্ট টিপস: ১ জিবি ডেটা, ৭ দিন, মাত্র ৫৯ টাকা। কিনতে ডায়াল করুন *121*1# STOP: 21212"
+   },
+   {
+    "angle": "stay online",
+    "english_gloss": "Stay online with Nodi: 1 GB data, 7 days, only Tk 59. To buy, dial *121*1# STOP: 21212",
+    "text": "নদী-র সাথে অনলাইনে থাকুন: ১ জিবি ডেটা, ৭ দিন, মাত্র ৫৯ টাকা। কিনতে ডায়াল করুন *121*1# STOP: 21212"
+   }
+  ]
+ },
+ "cf186d43a8b04df76b421275": {
+  "attempts": 1,
+  "cell_id": "S2-bundle_discount",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "warm welcome",
+    "english_gloss": "Welcome to Nodi! Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "Welcome to Nodi! Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   },
+   {
+    "angle": "new-customer gift",
+    "english_gloss": "Nodi gift for new customers: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "Nodi gift for new customers: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   },
+   {
+    "angle": "good start",
+    "english_gloss": "Make a great start with Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "Make a great start with Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   }
+  ]
+ },
+ "d610f6df266057614a8fe48b": {
+  "attempts": 1,
+  "cell_id": "S3-bonus_data",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "personal pick",
+    "english_gloss": "Just for you: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "Just for you: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you, from Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "For you, from Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   },
+   {
+    "angle": "stay connected",
+    "english_gloss": "Stay connected with Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "Stay connected with Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   }
+  ]
+ },
+ "e06ef0d30a4a9cf722c55c79": {
+  "attempts": 1,
+  "cell_id": "S3-recharge_cashback",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "personal pick",
+    "english_gloss": "Just for you: 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "শুধু আপনার জন্য: ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you, from Nodi: 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "নদী-র পক্ষ থেকে আপনার জন্য: ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   },
+   {
+    "angle": "stay connected",
+    "english_gloss": "Stay connected with Nodi: 20% cashback on a recharge of Tk 100 or more within 7 days, up to Tk 30. STOP: 21212",
+    "text": "নদী-র সাথে যুক্ত থাকুন: ৭ দিনের মধ্যে ১০০ টাকা বা বেশি রিচার্জে ২০% ক্যাশব্যাক, সর্বোচ্চ ৩০ টাকা। STOP: 21212"
+   }
+  ]
+ },
+ "e27f4495fe1299f58b3ee421": {
+  "attempts": 1,
+  "cell_id": "S6-reminder",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "plain reminder",
+    "english_gloss": "Nodi reminder: 1 GB data, 7 days, only Tk 59. To buy, dial *121*1# STOP: 21212",
+    "text": "নদী-র রিমাইন্ডার: ১ জিবি ডেটা, ৭ দিন, মাত্র ৫৯ টাকা। কিনতে ডায়াল করুন *121*1# STOP: 21212"
+   },
+   {
+    "angle": "friendly hello",
+    "english_gloss": "Greetings from Nodi: 1 GB data, 7 days, only Tk 59. To buy, dial *121*1# STOP: 21212",
+    "text": "নদী থেকে শুভেচ্ছা: ১ জিবি ডেটা, ৭ দিন, মাত্র ৫৯ টাকা। কিনতে ডায়াল করুন *121*1# STOP: 21212"
+   },
+   {
+    "angle": "stay connected",
+    "english_gloss": "Stay connected: 1 GB data, 7 days, only Tk 59. To buy, dial *121*1# STOP: 21212",
+    "text": "যুক্ত থাকুন: ১ জিবি ডেটা, ৭ দিন, মাত্র ৫৯ টাকা। কিনতে ডায়াল করুন *121*1# STOP: 21212"
+   }
+  ]
+ },
+ "e5c0bd483a0f2447bc5b1fdd": {
+  "attempts": 1,
+  "cell_id": "S4-tenure_reward",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "loyalty thanks",
+    "english_gloss": "Thank you for staying with Nodi! 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "Thank you for staying with Nodi! 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   },
+   {
+    "angle": "simple thanks",
+    "english_gloss": "A thank-you from Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "A thank-you from Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   },
+   {
+    "angle": "you matter",
+    "english_gloss": "You are special to us: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "You are special to us: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   }
+  ]
+ },
+ "e995f5b3e618d51da0dc1f73": {
+  "attempts": 1,
+  "cell_id": "S3-recharge_cashback",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "personal pick",
+    "english_gloss": "Just for you: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "Just for you: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you, from Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "For you, from Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   },
+   {
+    "angle": "stay connected",
+    "english_gloss": "Stay connected with Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "Stay connected with Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   }
+  ]
+ },
+ "ebe431a5ff4dcb0357363741": {
+  "attempts": 1,
+  "cell_id": "S1-tenure_reward",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "bn",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "we miss you",
+    "english_gloss": "Nodi misses you! 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "নদী আপনাকে মিস করছে! ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "নদী-তে ফিরে আসুন: ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   },
+   {
+    "angle": "gift framing",
+    "english_gloss": "A welcome-back gift: 1 GB data + 50 minutes free, valid 7 days. To get it, dial *121*4# STOP: 21212",
+    "text": "ফিরে আসার উপহার: ১ জিবি ডেটা + ৫০ মিনিট ফ্রি, মেয়াদ ৭ দিন। পেতে ডায়াল করুন *121*4# STOP: 21212"
+   }
+  ]
+ },
+ "ee6bccb44fd05f86f70035a7": {
+  "attempts": 1,
+  "cell_id": "S6-reminder",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "plain reminder",
+    "english_gloss": "Nodi reminder: Data 1GB, 7 days, only Tk59. Dial *121*1# to buy. STOP: 21212",
+    "text": "Nodi reminder: Data 1GB, 7 days, only Tk59. Dial *121*1# to buy. STOP: 21212"
+   },
+   {
+    "angle": "friendly hello",
+    "english_gloss": "Greetings from Nodi: Data 1GB, 7 days, only Tk59. Dial *121*1# to buy. STOP: 21212",
+    "text": "Greetings from Nodi: Data 1GB, 7 days, only Tk59. Dial *121*1# to buy. STOP: 21212"
+   },
+   {
+    "angle": "stay connected",
+    "english_gloss": "Stay connected: Data 1GB, 7 days, only Tk59. Dial *121*1# to buy. STOP: 21212",
+    "text": "Stay connected: Data 1GB, 7 days, only Tk59. Dial *121*1# to buy. STOP: 21212"
+   }
+  ]
+ },
+ "ef873a8f179e5207483cbeb2": {
+  "attempts": 1,
+  "cell_id": "S8-bonus_data",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "small extra",
+    "english_gloss": "A little extra from Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "A little extra from Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   },
+   {
+    "angle": "from the brand",
+    "english_gloss": "For you from Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "For you from Nodi: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   },
+   {
+    "angle": "bonus framing",
+    "english_gloss": "Nodi bonus: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212",
+    "text": "Nodi bonus: 2 GB free data, valid 7 days. Dial *121*2# to claim. STOP: 21212"
+   }
+  ]
+ },
+ "f057c912b7a4567872b8eb88": {
+  "attempts": 1,
+  "cell_id": "S5-tenure_reward",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "gentle check-in",
+    "english_gloss": "Haven't seen you in a while! 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "Haven't seen you in a while! 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   },
+   {
+    "angle": "plain reminder",
+    "english_gloss": "Nodi reminder: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "Nodi reminder: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   },
+   {
+    "angle": "come-back invitation",
+    "english_gloss": "Come back to Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212",
+    "text": "Come back to Nodi: 1 GB data + 50 min free, valid 7 days. Dial *121*4# to claim. STOP: 21212"
+   }
+  ]
+ },
+ "f69a9830c7369ee0add41bb9": {
+  "attempts": 1,
+  "cell_id": "S4-bundle_discount",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "loyalty thanks",
+    "english_gloss": "Thank you for staying with Nodi! Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "Thank you for staying with Nodi! Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   },
+   {
+    "angle": "simple thanks",
+    "english_gloss": "A thank-you from Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "A thank-you from Nodi: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   },
+   {
+    "angle": "you matter",
+    "english_gloss": "You are special to us: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212",
+    "text": "You are special to us: Combo L, 8 GB + 200 min for 30 days, now Tk244 (was Tk349). Dial *121*5# within 7 days. STOP: 21212"
+   }
+  ]
+ },
+ "f6bf273a9cadf74fad9cff4d": {
+  "attempts": 1,
+  "cell_id": "S2-recharge_cashback",
+  "created_at": "2026-11-17T00:00:00+00:00",
+  "lang": "en",
+  "model": "claude-opus-5-5 (Claude Code session, not the API pipeline)",
+  "repair_history": [],
+  "source": "seed-claude-code-session",
+  "variants": [
+   {
+    "angle": "warm welcome",
+    "english_gloss": "Welcome to Nodi! Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "Welcome to Nodi! Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   },
+   {
+    "angle": "new-customer gift",
+    "english_gloss": "Nodi gift for new customers: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "Nodi gift for new customers: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   },
+   {
+    "angle": "good start",
+    "english_gloss": "Make a great start with Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212",
+    "text": "Make a great start with Nodi: Recharge Tk100 or more within 7 days and get 20% cashback, up to Tk30. STOP: 21212"
+   }
+  ]
+ }
+}

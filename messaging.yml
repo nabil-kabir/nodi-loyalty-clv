@@ -1,0 +1,62 @@
+# Nodi Telecom (FICTIONAL): campaign SMS specification. Business-owned: edit wording here, not in code.
+# Every number a message may contain comes from `offers` below; the validator rejects anything else.
+
+brand_voice: |                     # BUSINESS CALL B6.1 (2026-11-17): warm & value-first
+  Nodi sounds like a friendly local shopkeeper who respects your money.
+  - One warm opening line, then the offer with its numbers up front, then exactly how to claim it.
+  - Bangla: everyday spoken Bangla (not formal shuddho), always respectful "apni". Quantities in Bangla digits.
+  - English: plain, short sentences. Write "Tk", never the taka sign (it breaks the 160-character SMS limit).
+  - No emoji, no ALL CAPS, no exclamation marks except at most one in the opening line.
+  - Never promise anything not in the offer record: no "unlimited", "forever", "guaranteed", or invented deadlines.
+  - Dial codes and the opt-out short code always stay in English digits so phones can dial them.
+  - End every message with the opt-out line exactly as given.
+
+optout: "STOP: 21212"
+
+sms_limits:                        # parts allowed per message (GSM-7: 160 / 153 per part; UCS-2: 70 / 67 per part)
+  en: 1                            # English must be GSM-7 and fit in one SMS
+  bn: 2                            # Bangla is UCS-2 (Unicode): 2 parts = 134 characters
+
+# Offer facts. `numbers` = every number allowed in copy for this offer; `required` = must appear.
+offers:
+  bonus_data:
+    name_en: Bonus data
+    facts: "2 GB free data, valid 7 days. Claim by dialling *121*2#."
+    dial_code: "*121*2#"
+    numbers: [2, 7]
+    required: [2, 7]
+  recharge_cashback:
+    name_en: Recharge cashback
+    facts: "20% cashback, up to Tk 30, on a recharge of Tk 100 or more made within 7 days. Credited automatically, no code needed."
+    dial_code: null
+    numbers: [20, 30, 100, 7]
+    required: [20, 30, 100, 7]
+  tenure_reward:
+    name_en: Tenure reward
+    facts: "Loyalty thank-you: 1 GB data + 50 minutes free, valid 7 days. Claim by dialling *121*4#."
+    dial_code: "*121*4#"
+    numbers: [1, 50, 7]
+    required: [1, 50, 7]
+  bundle_discount:
+    name_en: Bundle discount
+    facts: "Combo L pack (8 GB + 200 minutes, valid 30 days) for Tk 244 instead of Tk 349 (30% off). Buy within 7 days by dialling *121*5#."
+    dial_code: "*121*5#"
+    numbers: [8, 200, 30, 244, 349, 7]
+    required: [244, 349]
+  reminder:                        # free nudge for no-spend segments: no discount, just a pack reminder
+    name_en: Pack reminder (no offer)
+    facts: "Reminder of an existing pack, not a discount: Data 1GB, valid 7 days, Tk 59. Buy by dialling *121*1#."
+    dial_code: "*121*1#"
+    numbers: [1, 7, 59]
+    required: [59]
+
+# How each segment is addressed. Segments with stance no_spend only ever get the `reminder`.
+segment_angles:
+  1: "Valuable customer who has gone quiet for 3+ weeks. Angle: we miss you, come back. Warm, not desperate."
+  2: "New customer in their first 6 months. Angle: welcome, help them get started."
+  3: "Valuable customer whose usage is slipping. Angle: something just for you, stay connected."
+  4: "Valuable, steady customer. Angle: thank you for staying with us."
+  5: "Mid-value customer who has gone quiet. Angle: light reminder, low pressure."
+  6: "Low-value customer who has lapsed (likely a secondary SIM). Angle: friendly reminder only."
+  7: "Low-value customer whose usage is wobbling. Angle: helpful tip only."
+  8: "Stable core customer. Angle: a small extra, light touch. Never pushy."

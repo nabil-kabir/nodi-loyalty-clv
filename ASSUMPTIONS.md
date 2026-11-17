@@ -79,3 +79,12 @@ Costs are charged **per subscriber who redeems**, plus an SMS contact cost for e
 | ID | Item | Value | Status | Reasoning |
 |---|---|---|---|---|
 | G01 | Operator scale | The 200k synthetic base is a **1% sample** of a ~13.3M-active operator. Sample ৳ and subscriber counts × 100 | Business call B5.1 (you) | Puts the ৳1 crore quarterly budget at about ৳0.75 per active subscriber per quarter, so the budget binds and targeting matters. Bangladesh's largest operators are 4–6× bigger (Robi 56.7M subscribers in 2024: [Daily Star](https://www.thedailystar.net/node/3826946)) |
+
+## H. Campaign SMS (Phase 6)
+
+| ID | Item | Value | Status | Reasoning |
+|---|---|---|---|---|
+| H01 | SMS length rules | GSM-7: 160 characters, 153 per part. UCS-2: 70, 67 per part. Extension characters count double | Sourced (standard) | 3GPP TS 23.038 / TS 23.040. Bangla script and the taka sign force UCS-2 |
+| H02 | Parts allowed | English 1 SMS. Bangla 2 parts (134 characters) | Assumption | Bangla needs Unicode SMS, so a single part (70 characters) can't carry an offer plus how to claim it. The cap keeps cost per message predictable |
+| H03 | Dial codes and opt-out short code | `*121*1#`–`*121*5#`, `STOP: 21212` | Fictional | Invented for Nodi. Kept in English digits inside Bangla copy so phones dial them directly |
+| H04 | SMS sending cost | Included in the ৳0.25 contact cost (F01) | Assumption | A 2-part Bangla SMS costs roughly twice a 1-part one. Not modelled separately at this scale |

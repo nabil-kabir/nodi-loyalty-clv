@@ -9,13 +9,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 
 from nodi.config import load_config  # noqa: E402
 
-STEPS = ["simulate", "warehouse", "models", "segments", "offers", "report"]
+STEPS = ["simulate", "warehouse", "models", "segments", "offers", "messages", "report"]
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--sample", action="store_true", help="20k-subscriber build into data_sample/")
     ap.add_argument("--only", choices=STEPS, help="run a single step")
+    g = ap.add_mutually_exclusive_group()
+    g.add_argument("--live", action="store_true", help="messages: call the Anthropic API (needs ANTHROPIC_API_KEY)")
+    g.add_argument("--mock", action="store_true", help="messages: use only the on-disk cache (default without a key)")
+    ap.add_argument("--seed-messages", action="store_true",
+                    help="messages: (re)write the labelled seed copy into the cache first (never overwrites API output)")
     args = ap.parse_args()
     cfg = load_config(sample=args.sample)
     steps = [args.only] if args.only else STEPS
@@ -35,6 +40,13 @@ def main():
     if "offers" in steps:
         from nodi.offers.run import run_offers
         run_offers(cfg)
+    if "messages" in steps:
+        from nodi.messaging.run import run_messages
+        if args.seed_messages:
+            from nodi.messaging.seed import write_seed
+            print(f"[messages] seeded {write_seed(cfg)} cell/language entries", flush=True)
+        mode = "live" if args.live else "mock" if args.mock else None
+        print("[messages]", run_messages(cfg, mode=mode), flush=True)
     if "report" in steps:
         from nodi.segments.build import phase4_report
         from nodi.validate.phase5 import phase5_validation

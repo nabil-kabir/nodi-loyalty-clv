@@ -365,3 +365,65 @@ Past win-back campaigns were targeted (1.8), so their outcomes are confounded.
 - **Stable core is allowed:** the optimiser targets about 9% of it with cheap bonus data. Its action text in `segments.yml` is updated to match.
 - **Rejected:** "evidence first", which would also have re-labelled segment stances, and hard rules excluding Stable core (−৳0.29 crore model estimate).
 - **Unchanged:** segment 1's stance stays *invest*. The plan still gives offers to only 7% of it, so the money already follows the evidence.
+
+---
+
+## Phase 6: Claude-generated campaign messages (2026-11-17)
+
+### Business calls (yours)
+
+**B6.1 Brand voice = warm and value-first.**
+- **Shape:** one friendly opening line, then the offer with its numbers up front, then how to claim it.
+- **Language:** everyday Bangla with respectful আপনি; English in plain GSM-7 with "Tk", never ৳.
+- **Rejected:** crisp and transactional (reads like a system notice) and premium/formal (longer and stiffer).
+- **Where it lives:** `messaging.yml` → `brand_voice`, editable without code.
+
+**B6.2 First batch = a seed cache written now, regenerated with your API key later.**
+- **Why:** no Anthropic credentials are configured on this machine.
+- **What the seed is:** 156 messages written by Claude (claude-opus-5-5) in this Claude Code session, assembled from three per-segment openings and one per-offer body.
+- **Labelled everywhere:** in the cache (`source: seed-claude-code-session`), the review file and the Phase 6 report.
+- **To replace it:** run `python run.py --only messages --live` once a key is set. It replaces every seed entry under the same cache keys and never overwrites real API output.
+
+### Technical choices
+
+**6.1 Facts never come from the model.**
+- **Source of facts:** offer numbers, dial codes and the opt-out line come from `messaging.yml` → `offers`.
+- **What the validator rejects** (`nodi/messaging/sms.py`):
+  - any number not in the offer record
+  - a required number that is missing
+  - an altered dial code
+  - numbers written as words
+  - "unlimited", "forever" and "guaranteed" claims
+  - emoji
+  - a missing opt-out line
+  - non-GSM-7 English
+  - too many SMS parts
+- **Where it runs:** on every message at generation and again whenever the app data is rebuilt, so a rule change re-checks the whole cache.
+
+**6.2 Two validator design details found by tests**
+- Bangla digits are normalised (২ → 2) before checking.
+- Bangla number words are matched as **whole tokens**. Substring matching would wrongly flag একটু ("a little") and শতাংশ ("percent"). নয় is excluded because it usually means "is not".
+- Digits inside the dial code are **removed before** the facts are checked. Otherwise `*121*2#` counts as "mentioning 2 GB", which a test caught.
+
+**6.3 Self-repair loop**
+- Rejected variants go back to the model with the validator's exact errors, up to `llm.max_repairs` = 2 times.
+- Anything still invalid is kept out of the app and flagged.
+
+**6.4 Model call**
+- **Model:** `claude-sonnet-5-5` (configurable), effort `medium`, structured JSON output (`output_config.format` with a schema), via the Anthropic Python SDK.
+- **Refusals:** server-side refusal fallback is on by default (`fallbacks: "default"`, beta `server-side-fallback-2026-07-01`). A remaining refusal is raised, never silently skipped.
+- **Testing limit:** the live path is tested with a fake client. It has **not yet run against the real API**, because no key was available.
+
+**6.5 Cells**
+- 6 spend-eligible segments × 4 offers, plus the 2 no-spend segments × a free pack reminder (guardrail B5.4).
+- That gives 26 cells × 2 languages × 3 variants = 156 messages.
+
+**6.6 Cache and mock mode**
+- **Cache key:** a hash of model + system prompt + user prompt.
+- **Mock mode** (the default without a key) reads only the cache. If a prompt changed after caching, it falls back to the newest entry for that cell and marks it stale.
+- **Committed artefacts:** `app_data/llm_cache/sms_cache.json` and `app_data/messages.json`, so reviewers need no credentials.
+
+**6.7 Native review file**
+- `review/bangla_review.csv`: UTF-8 with a BOM so Excel shows Bangla correctly. It has a literal English gloss, a PENDING status and reviewer notes.
+- Notes survive a rerun when the text is unchanged.
+- **This is your native-speaker check.**
