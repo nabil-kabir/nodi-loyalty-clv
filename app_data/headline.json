@@ -1,0 +1,64 @@
+{
+ "score_date": "2026-07-01",
+ "operator_scale": 100,
+ "budget_bdt": 10000000,
+ "slider_max_bdt": 30000000,
+ "holdout_share": 0.05,
+ "best_single_offer": "recharge_cashback",
+ "excluded_stances": [
+  "no_spend"
+ ],
+ "base": {
+  "active_base_end": 132473.0,
+  "arpu_last6": 150.2712670769686,
+  "arpu_active_last6": 136.77968478378,
+  "churn_rate_avg": 0.032097230253389175,
+  "churn_rate_last6": 0.028485955301136026,
+  "scored_subscribers": 132947.0,
+  "expected_churners": 21051.39952666914,
+  "revenue_at_risk": 19935415.03847753,
+  "net_revenue_at_risk": 25558224.40830437,
+  "value_if_retained": 1203.1279315141537,
+  "clv_12m": 1142.7034650538578
+ },
+ "plans": {
+  "optimised": {
+   "targeted": 1656700,
+   "spend_bdt": 9999783.64582724,
+   "spend_face_bdt": 70389118.11453885,
+   "expected_net_margin_bdt": 31149175.426530138,
+   "roi": 3.1149849366519273
+  },
+  "highest_churn_risk": {
+   "targeted": 866300,
+   "spend_bdt": 9999902.851788027,
+   "spend_face_bdt": 9999902.851788027,
+   "expected_net_margin_bdt": 7854210.056702953,
+   "roi": 0.7854286359690569
+  },
+  "blanket": {
+   "targeted": 787000,
+   "spend_bdt": 9998696.166919895,
+   "spend_face_bdt": 9998696.166919895,
+   "expected_net_margin_bdt": 8118194.314988767,
+   "roi": 0.811925293004436
+  }
+ },
+ "max_profitable_spend_bdt": 118796413.5788701,
+ "max_net_bdt": 137763885.3297518,
+ "pilot_ipw": {
+  "optimised": {
+   "net_inc_per_sub": 1.2299699199199212,
+   "se": 3.717310483050276,
+   "share_treated": 0.15127627627627627
+  },
+  "blanket": {
+   "net_inc_per_sub": 0.2391194694694693,
+   "se": 1.6760149209035742,
+   "share_treated": 0.07167167167167167
+  }
+ },
+ "sigma_margin_90d": 227.79157198823387,
+ "sigma_retention": 0.37176691044855414,
+ "cmo_metric": "Net contribution margin per Tk of offer cost, measured against a randomised 5% holdout (read at 90 days, projected to 12 months). Retention vs holdout is a guardrail."
+}

@@ -17,4 +17,8 @@ py -3.14 -m venv .venv && .venv/Scripts/pip install -r requirements.txt   # Wind
 python run.py            # full 200k-subscriber build (~8 min)
 python run.py --sample   # 20k build into data_sample/
 python -m pytest
+streamlit run app/streamlit_app.py      # the app: reads app_data/ only, no API key needed
 ```
+
+Campaign SMS run in **mock mode** from a committed cache by default. To generate them with Claude, set
+`ANTHROPIC_API_KEY` and run `python run.py --only messages --live`.

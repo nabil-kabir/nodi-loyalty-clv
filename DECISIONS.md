@@ -427,3 +427,33 @@ Past win-back campaigns were targeted (1.8), so their outcomes are confounded.
 - `review/bangla_review.csv`: UTF-8 with a BOM so Excel shows Bangla correctly. It has a literal English gloss, a PENDING status and reviewer notes.
 - Notes survive a rerun when the text is unchanged.
 - **This is your native-speaker check.**
+
+---
+
+## Phase 7: Streamlit app (2026-11-17)
+
+**7.1 The app reads only `app_data/`.**
+- **Size:** 14 files, 19.5 MB, committed. Produced by `python run.py --only export`.
+- **What it never touches:** the warehouse, raw data or ground truth. A test enforces this.
+- **Deployment:** runs on Streamlit Community Cloud with the minimal `app/requirements.txt` (no DuckDB, LightGBM or SciPy) and needs no API key.
+
+**7.2 Live budget slider without re-running the optimiser.**
+- **How:** the optimiser's incremental steps (5.6), plus a precomputed order for each baseline, are exported once. Any budget is then a `searchsorted` on cumulative cost.
+- **Views:** the slider re-allocates, compares baselines and shows who gets what instantly, for both the network-cost and face-value views (decision 0.5).
+
+**7.3 Validation is shown, not hidden, but kept separate.**
+- The executive page has a toggle, "Show what really happened (planted truth)", and an expander with the model-vs-truth results.
+- The summary is assembled inside `nodi.validate`. The firewall test caught a first version that assembled it in `nodi/export.py`. That was fixed by moving the code, not by loosening the test.
+
+**7.4 Formatting for a Bangladeshi audience.**
+- Taka in lakh and crore throughout ("৳3.11 cr", "16.6 L subscribers").
+- Rounded before choosing the unit, so ৳99.98 lakh reads as ৳1.00 cr.
+
+**7.5 Campaign studio.**
+- Phone-style previews in Bangla and English.
+- A visible "mock mode, seed copy" warning while the messages are seed copy.
+- A live validator textbox using the same `check_message` that gates generation.
+
+**7.6 Testing.**
+- **Headless:** Streamlit `AppTest` renders every page and checks the synthetic-data banner, that the executive numbers match `headline.json`, that the slider changes the allocation, that the face-value toggle works, and that the studio validator rejects a bad edit.
+- **Visual:** checked in the browser pane at about 800px wide. That pass led to compact metric values, a full-width plan chart, and aligned variant cards.

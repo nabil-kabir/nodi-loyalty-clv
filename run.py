@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 
 from nodi.config import load_config  # noqa: E402
 
-STEPS = ["simulate", "warehouse", "models", "segments", "offers", "messages", "report"]
+STEPS = ["simulate", "warehouse", "models", "segments", "offers", "messages", "report", "export"]
 
 
 def main():
@@ -64,6 +64,9 @@ def main():
         phase4_validation(cfg)
         print("[report] phase 5 validation against planted truth", flush=True)
         phase5_validation(cfg)
+    if "export" in steps:
+        from nodi.export import export_app_data
+        print("[export] app_data:", export_app_data(cfg), flush=True)
 
 
 if __name__ == "__main__":
