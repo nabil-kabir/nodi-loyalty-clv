@@ -1,0 +1,56 @@
+{
+  "at_budget": {
+    "optimised": {
+      "model": 31288482.958091527,
+      "truth": 51501736.000201784
+    },
+    "naive_uplift": {
+      "model": 273652078.68493533,
+      "truth": 3544782.2402775143
+    },
+    "blanket": {
+      "truth": 9661513.257653303
+    },
+    "highest_churn_risk": {
+      "truth": -7039122.796805245
+    }
+  },
+  "calibration": [
+    {
+      "offer_id": "bonus_data",
+      "pred_value_mean": 6.23103655053428,
+      "true_value_mean": 8.828949988846057,
+      "spearman": 0.4718826843333867,
+      "true_retention_uplift_pp": 0.18432829599537934,
+      "true_persuadable": 0.05086972097281375,
+      "true_sleeping_dog": 0.12320184691318711
+    },
+    {
+      "offer_id": "recharge_cashback",
+      "pred_value_mean": 23.037928211046854,
+      "true_value_mean": 25.573399554468697,
+      "spearman": 0.21992657784266,
+      "true_retention_uplift_pp": 0.8138248646941041,
+      "true_persuadable": 0.07934561955180512,
+      "true_sleeping_dog": 0.07887593042232217
+    },
+    {
+      "offer_id": "tenure_reward",
+      "pred_value_mean": 0.0,
+      "true_value_mean": -0.15713733989309028,
+      "spearman": NaN,
+      "true_retention_uplift_pp": -0.04143106462560045,
+      "true_persuadable": 0.026437925406997572,
+      "true_sleeping_dog": 0.12995263304541654
+    },
+    {
+      "offer_id": "bundle_discount",
+      "pred_value_mean": 14.573102107959217,
+      "true_value_mean": 14.07088935718106,
+      "spearman": 0.430598079101161,
+      "true_retention_uplift_pp": 0.3346895990615516,
+      "true_persuadable": 0.03252000159216654,
+      "true_sleeping_dog": 0.088739402141464
+    }
+  ]
+}

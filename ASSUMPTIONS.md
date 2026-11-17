@@ -61,3 +61,21 @@
 | E05 | Effect size | Planted retention effects scaled to 0.6 of the original design | Business call B1.1 (`truth_world.effect_scale`); gives about 5% persuadables per offer |
 | E03 | Lost causes | Subscribers already fading out when treated get no effect; heavy multi-SIM users get weaker effects | |
 | E04 | Response-group labels | Persuadable if uplift ≥ +3pp; sleeping dog if ≤ −0.5pp; sure thing if baseline churn < 8%; lost cause if baseline churn ≥ 50% | `truth_labels` |
+
+## F. Offer cost model (Phase 5)
+
+Costs are charged **per subscriber who redeems**, plus an SMS contact cost for everyone targeted. Redemption probability comes from models trained on the pilot. The economic and face views follow decision 0.5.
+
+| ID | Item | Economic (used by optimiser) | Face value (sensitivity) | Status | Reasoning |
+|---|---|---:|---:|---|---|
+| F01 | SMS contact cost per targeted subscriber | ৳0.25 | ৳0.25 | Assumption | Internal A2P SMS on own network |
+| F02 | Bonus data, 2 GB / 7 days | ৳10 | ৳73 | Assumption | 2 GB × ৳5/GB network cost (D03). Face = 2 GB at the Data 3GB pack's per-GB price |
+| F03 | Recharge cashback, 20% capped at ৳30 | ৳25 | ৳25 | Assumption | 20% of a typical qualifying recharge of about ৳125. Real cash, so both views match |
+| F04 | Tenure reward, 1 GB + 50 min | ৳7.5 | ৳79 | Assumption | ৳5 data plus 50 on-net minutes at about ৳0.05/min. Face = Combo S price |
+| F05 | Bundle discount, 30% off Combo L (৳349) | ৳105 | ৳105 | Assumption | Revenue forgone on every discounted purchase, including ones that would have happened anyway |
+
+## G. Scale
+
+| ID | Item | Value | Status | Reasoning |
+|---|---|---|---|---|
+| G01 | Operator scale | The 200k synthetic base is a **1% sample** of a ~13.3M-active operator. Sample ৳ and subscriber counts × 100 | Business call B5.1 (you) | Puts the ৳1 crore quarterly budget at about ৳0.75 per active subscriber per quarter, so the budget binds and targeting matters. Bangladesh's largest operators are 4–6× bigger (Robi 56.7M subscribers in 2024: [Daily Star](https://www.thedailystar.net/node/3826946)) |

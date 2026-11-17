@@ -1,0 +1,9 @@
+offer_id,outcome,ate,ate_se,shrink,ate_shrunk,candidate,beta2_used,beta2_t,s_bar
+bonus_data,margin,7.0393,3.3312,0.817,5.7513,redemption,69.5457,2.9183,0.3041
+bonus_data,retention,0.0041,0.0058,0.0,0.0,none (average effect),0.0,,0.0
+recharge_cashback,margin,23.1969,3.5955,0.9765,22.6527,redemption,51.8809,1.7718,0.4911
+recharge_cashback,retention,0.0076,0.0058,0.0,0.0,none (average effect),0.0,,0.0
+tenure_reward,margin,1.0832,3.5916,0.0,0.0,none (average effect),0.0,,0.0
+tenure_reward,retention,0.0081,0.0058,0.0,0.0,none (average effect),0.0,,0.0
+bundle_discount,margin,14.2251,3.3206,0.9483,13.49,redemption,181.0924,4.4008,0.3849
+bundle_discount,retention,-0.0005,0.0059,0.0,-0.0,none (average effect),0.0,,0.0

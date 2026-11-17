@@ -1,0 +1,45 @@
+{
+  "operator_scale": 100,
+  "budget_operator_bdt": 10000000,
+  "best_single_offer": "recharge_cashback",
+  "plans_operator": {
+    "optimised": {
+      "targeted": 1648600,
+      "spend_bdt": 9999863.627800122,
+      "spend_face_bdt": 70402459.4829409,
+      "expected_net_margin_bdt": 31288482.958091527,
+      "roi": 3.1288909651835626
+    },
+    "highest_churn_risk": {
+      "targeted": 856000,
+      "spend_bdt": 9999593.493810635,
+      "spend_face_bdt": 9999593.493810635,
+      "expected_net_margin_bdt": 7888333.9413194535,
+      "roi": 0.7888654620012333
+    },
+    "blanket": {
+      "targeted": 789600,
+      "spend_bdt": 9998836.42879772,
+      "spend_face_bdt": 9998836.42879772,
+      "expected_net_margin_bdt": 8109647.367809216,
+      "roi": 0.8110591092832125
+    }
+  },
+  "max_profitable_spend_operator_bdt": 142526311.48581985,
+  "max_net_operator_bdt": 160654446.17787766,
+  "pilot_ipw_net_per_pilot_sub": {
+    "optimised": {
+      "net_inc_per_sub": 1.1380353353353354,
+      "se": 3.4875027854292626,
+      "share_treated": 0.1257257257257257
+    },
+    "blanket": {
+      "net_inc_per_sub": 0.9269849849849846,
+      "se": 1.5474106071670077,
+      "share_treated": 0.060635635635635635
+    }
+  },
+  "plan_offer_mix": {
+    "bonus_data": 15645
+  }
+}

@@ -42,3 +42,10 @@ def segmented(modelled):
     cfg, _ = modelled
     build_segments(cfg)
     return cfg
+
+
+@pytest.fixture(scope="session")
+def offered(segmented):
+    from nodi.offers.run import run_offers
+    summary = run_offers(segmented)
+    return segmented, summary

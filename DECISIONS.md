@@ -272,3 +272,76 @@ Dhaka is the most common division in every segment because it's the largest, so 
 - **Planted incremental margin per subscriber** (before offer cost): ৳0–14 here, against ৳20–33 for Shaky newcomers and ৳26–30 for Valuable but exposed.
 - **Why it matters:** this is the classic case for uplift modelling over risk × value targeting. **I have not changed the segment's stance**, because acting on hidden truth would be peeking.
 - **Next:** Phase 5's uplift models, trained only on the observable pilot, should independently find that offers barely move "gone quiet" subscribers. If they do, segment 1's stance moves from *invest* to *test*, on observable evidence.
+
+---
+
+## Phase 5: Offer engine and budget allocation (2026-11-17)
+
+### Business call (yours)
+
+**B5.1 Budget scale = our base is a 1% sample of a ~13.3M-active operator.**
+- **Effect:** ৳1 crore operator becomes ৳1 lakh on the sample, and the budget binds hard.
+- **Rejected options:**
+  - A 10% sample (the budget would cover about 82% of the base).
+  - "The sample is the operator" (only ৳14.3 lakh of the crore could be spent profitably).
+
+### Technical choices, including two mistakes caught and fixed
+
+**5.1 Uplift is learned only from the randomised pilot, never from targeted campaigns**
+Past win-back campaigns were targeted (1.8), so their outcomes are confounded.
+
+**5.2 First attempt failed: raw uplift scores plus an optimiser is a money-losing machine**
+- **What happened:** T-learner uplift scores fed straight to the optimiser claimed ৳27.4 crore of net margin at ৳1 crore. The truth was **৳0.35 crore**.
+- **Why:** with 8,000 subscribers per arm and effects of a few taka, the scores are mostly noise, and an optimiser hunts noise (the winner's curse). Cheap offers make it worse: a ৳2 tenure reward with noisy +৳5 value looks like a 150% return.
+- **I keep this naive plan in the report as a cautionary comparison.**
+
+**5.3 Fix part 1: let held-out pilot data decide how much personalisation is real**
+- Three candidate scores, all cross-fitted: a T-learner, a DR-learner with a ridge final stage on 12 interpretable features, and predicted redemption probability.
+- For each offer and outcome, a **Best Linear Predictor test** (Chernozhukov et al., 2018) on out-of-fold predictions estimates β₂: how much of a score's predicted variation is real.
+- The candidate with the strongest significant β₂ (t > 1.64) is used. If none passes, everyone gets the average effect.
+- **Result:** the T-learner never passes. Predicted redemption passes for the margin effect of bonus data (t = 2.9), cashback (t = 1.8) and bundle discount (t = 4.4). People likely to redeem also gain more. No retention effect is personalisable.
+
+**5.4 Fix part 2: act only on effects the pilot can distinguish from zero**
+- An average effect is used only if one-sided significant at 5%, then shrunk by ate²/(ate² + se²).
+- **Effect:** every retention uplift drops to 0 (all are below 1pp ± 1.1pp), and so does the tenure reward's margin uplift.
+- **Truth check:** true retention uplifts are 0.0–0.8pp. Treating them as zero costs almost nothing and stops the optimiser multiplying noise by ৳1,200 of value-if-retained.
+
+**5.5 Value of an offer**
+- **Formula:** extra 90-day margin (measured directly in the pilot) + retention uplift × value-if-retained × 0.75 (months 4–12 carried forward). Nothing is counted twice.
+- **What drives it:** after 5.4, value is driven by **spend lift**. The pilot's main finding is that offers make people top up more, not stay longer.
+
+**5.6 Optimiser = LP relaxation of a multiple-choice knapsack, solved greedily**
+- **Method:** each subscriber's options form a concave hull of (cost, net). The hull's incremental steps are ranked by net per taka across the base.
+- **Optimality:** exact for the LP relaxation, and within one item per subscriber of the integer optimum.
+- **Speed:** steps are precomputed, so any budget is a cumulative-sum lookup. That is what makes the app slider live.
+
+**5.7 Fair baselines**
+- Both send the pilot's best single offer (recharge cashback, the best average net) either to the highest churn-risk subscribers or at random.
+- Neither baseline uses hidden information, and they are the plans a sensible manager would run from the pilot readout.
+
+**5.8 Evidence, observable and validated**
+
+| At ৳1 crore | Model estimate | True net 12-month margin |
+|---|---:|---:|
+| **Optimised** | ৳3.13 cr | **৳5.15 cr** |
+| Blanket cashback | ৳0.81 cr | ৳0.97 cr |
+| Cashback to highest churn risk | ৳0.79 cr | **−৳0.70 cr** |
+| Raw uplift scores (5.2) | ৳27.4 cr | ৳0.35 cr |
+
+- **The model is conservative,** which is the purpose of the shrinkage.
+- **Highest-risk targeting loses money:** the riskiest subscribers are mostly "gone quiet" lost causes. That confirms the Phase 4 hypothesis (4.6) from observable data: the plan gives offers to only 7% of Fading high-value, the segment's lowest true return.
+- **The pilot cannot tell the policies apart:** inverse-propensity weighting gives overlapping ±৳13 intervals per pilot subscriber. The plan's own holdout is what will prove it.
+
+**5.9 The headline recommendation depends on decision 0.5**
+- At network cost, bonus data costs about ৳3.4 per targeted subscriber and is the plan's only offer at ৳1 crore.
+- At face value, it costs about ৳22 and loses ৳15 per head, and the plan would switch to cashback.
+- That is a real point to defend with Finance.
+
+**5.10 Reproducibility bug found and fixed**
+- **Bug:** DuckDB returns rows in a non-deterministic order. The cross-fitted uplift scores are positional, so one run silently mismatched them to the wrong subscribers.
+- **Fix:** frames are sorted by `sub_id` before any positional step.
+- **Lesson:** a sort is required before any positional step on DuckDB output.
+
+**5.11 An empty plan is a valid answer**
+- On the tiny test sample, nothing passes the significance rule, so the plan is "spend nothing".
+- The code and tests treat that as correct, not as an error.

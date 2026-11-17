@@ -124,6 +124,36 @@ Generated from `metrics.yml`. Every number in this project comes from one of the
 - **Definition:** Average predicted 12-month contribution margin a subscriber brings if they do not churn. This is what a successful save is worth, before offer cost.
 - **Owner:** Data Science  |  **Unit:** bdt  |  **Model:** `scores_subscriber`  |  **Available from:** Phase 3
 
+### `targeted_subscribers`: Subscribers targeted
+
+- **Definition:** Subscribers who receive an offer under the optimised plan (excludes the randomised holdout).
+- **Owner:** CVM & Loyalty (Head of CVM)  |  **Unit:** subscribers  |  **Model:** `mart_plan`  |  **Available from:** Phase 5
+
+### `holdout_subscribers`: Holdout subscribers
+
+- **Definition:** Subscribers the optimiser selected but who are randomly held back (no offer) to measure true incremental impact. Share set by config budget.holdout_share (DECISIONS B5.2).
+- **Owner:** Data Science  |  **Unit:** subscribers  |  **Model:** `mart_plan`  |  **Available from:** Phase 5
+
+### `planned_spend`: Planned offer spend (network cost)
+
+- **Definition:** Expected cost of the plan: SMS contact cost for everyone targeted plus predicted redemption x cost per redeemer, with data valued at network cost and cash at face (decision 0.5, ASSUMPTIONS F).
+- **Owner:** Finance: Revenue Assurance  |  **Unit:** bdt  |  **Model:** `mart_plan`  |  **Available from:** Phase 5
+
+### `planned_spend_face`: Planned offer spend (face value)
+
+- **Definition:** Same plan costed at the retail (face) value of data and minutes. A sensitivity view only.
+- **Owner:** Finance: Revenue Assurance  |  **Unit:** bdt  |  **Model:** `mart_plan`  |  **Available from:** Phase 5
+
+### `expected_net_margin`: Expected incremental margin, net of cost
+
+- **Definition:** Expected 12-month incremental contribution margin from the plan, minus expected offer cost. Uplift comes from models trained only on the randomised pilot, calibrated and shrunk (DECISIONS 5.x).
+- **Owner:** Data Science  |  **Unit:** bdt  |  **Model:** `mart_plan`  |  **Available from:** Phase 5
+
+### `plan_roi`: Net margin per ৳ spent
+
+- **Definition:** Expected net incremental margin returned per ৳1 of offer cost.
+- **Owner:** Finance: Revenue Assurance  |  **Unit:** ratio  |  **Model:** `mart_plan`  |  **Available from:** Phase 5
+
 ### `net_revenue_at_risk`: Net revenue at risk (12m)
 
 - **Definition:** revenue_at_risk expressed as net revenue instead of contribution margin (divided by the contribution margin ratio, ASSUMPTIONS D02). Use when Finance asks "how much revenue".

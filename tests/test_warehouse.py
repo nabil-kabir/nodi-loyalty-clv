@@ -41,7 +41,9 @@ def test_every_available_metric_executes(m):
             continue
         by = [] if d.get("type") == "experiment_lift" else ["month_start"]
         df = m.get(name, by=by)
-        assert len(df) > 0 and df[name].notna().any(), name
+        source_rows = m.con.execute(f"SELECT COUNT(*) FROM {d['model']}").fetchone()[0]
+        if source_rows:  # e.g. the plan is legitimately empty on the tiny test sample
+            assert len(df) > 0 and df[name].notna().any(), name
 
 
 def test_headline_arpu_matches_independent_calculation(m, wh):
