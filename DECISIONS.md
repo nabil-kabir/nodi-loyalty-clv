@@ -81,5 +81,18 @@ The 200k build takes about 8 minutes on this machine: 6.3 minutes of simulation,
 **B1.1 Planted response-group mix**
 Persuadable / sure thing / lost cause / sleeping dog per offer. This is the "world" the models will be judged against. Current default is roughly 7–15% persuadable, about 70% sure things, 2% lost causes and 4–10% sleeping dogs. Options are below.
 
+> **Decided 2026-11-17: "Harder world" (you).** You chose this over keeping the original mix or an easier world.
+>
+> **What changed:** `truth_world.effect_scale` = 0.6 (every offer's planted retention effect cut by 40%) and `contact_fatigue_share` from 6% to 9%. On a 10k sweep this gives about 5% persuadables (cashback ~8%, tenure reward ~2%) and about 11% sleeping dogs.
+>
+> **Trade-off you're accepting:**
+> - The gap between smart targeting and a blanket offer gets bigger, which makes for a stronger story.
+> - The uplift models in Phase 5 will be noisier, and validation against the truth will be less clean.
+> - Some offers may not pay back at any budget.
+>
+> **Interview line:** "I deliberately made the world hard: most people don't need an offer, and one in ten is pushed out by one."
+>
+> The sweep options were (effect scale, fatigue share): (0.6, 0.10) → 4.6% / 11.5%; (0.5, 0.10) → 3.4% / 11.0%; (0.45, 0.11) → 2.6% / 11.7%.
+
 **B1.2 Region and handset mix**
 Division shares come from Census 2022. Urban share and handset tiers are assumptions (see ASSUMPTIONS.md). Changing them reshapes segments in Phase 4.

@@ -57,6 +57,7 @@
 | ID | Item | Value | Notes |
 |---|---|---|---|
 | E01 | Offer responsiveness | Bonus data ↔ data affinity; cashback ↔ price sensitivity; tenure reward ↔ long tenure and low engagement; bundle discount ↔ pack affinity | See `engine.true_delta` |
-| E02 | Sleeping dogs | 6% of subscribers have high "contact fatigue": any offer raises their churn hazard | The share is adjustable; this is business call B1.1 |
+| E02 | Sleeping dogs | 9% of subscribers have high "contact fatigue": any offer raises their churn hazard | Business call B1.1, "harder world" (`truth_world.contact_fatigue_share`) |
+| E05 | Effect size | Planted retention effects scaled to 0.6 of the original design | Business call B1.1 (`truth_world.effect_scale`); gives about 5% persuadables per offer |
 | E03 | Lost causes | Subscribers already fading out when treated get no effect; heavy multi-SIM users get weaker effects | |
 | E04 | Response-group labels | Persuadable if uplift ≥ +3pp; sleeping dog if ≤ −0.5pp; sure thing if baseline churn < 8%; lost cause if baseline churn ≥ 50% | `truth_labels` |

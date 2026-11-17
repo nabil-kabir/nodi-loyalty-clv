@@ -29,6 +29,10 @@ pilot:                             # randomised campaign inside the observed win
   n_subscribers: 40000             # scaled proportionally in sample mode
   window_days: 90
 
+truth_world:                       # BUSINESS CALL B1.1 (2026-11-17): "harder world"
+  effect_scale: 0.6                # multiplies every offer's planted retention effect (1.0 = original)
+  contact_fatigue_share: 0.09      # share of subscribers whom any offer pushes towards churn (was 0.06)
+
 truth_labels:                      # how planted response groups are labelled (per offer)
   persuadable_min_uplift: 0.03     # >= +3pp absolute retention uplift
   sleeping_dog_max_uplift: -0.005  # offer raises churn by >= 0.5pp

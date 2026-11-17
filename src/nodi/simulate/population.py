@@ -124,7 +124,7 @@ def build_population(n: int, cfg: dict, cal: Calendar, rng: np.random.Generator)
     w_base = np.where(has_other, 1 - 0.4 * competitor_pull * rng.uniform(0.5, 1.0, n), 1.0)
 
     nq = np.vectorize(NETWORK_QUALITY.get)(division) + 0.2 * urban + rng.normal(0, 0.25, n)
-    contact_fatigue = np.where(rng.random(n) < 0.06, rng.uniform(0.6, 1.0, n), rng.uniform(0, 0.05, n))
+    contact_fatigue = np.where(rng.random(n) < cfg["truth_world"]["contact_fatigue_share"], rng.uniform(0.6, 1.0, n), rng.uniform(0, 0.05, n))
     log_h0 = np.log(0.0008) + rng.normal(0, 0.8, n)
 
     # ---- behaviour parameters

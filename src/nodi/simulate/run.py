@@ -143,7 +143,9 @@ def simulate(cfg: dict) -> dict:
     rng_camp = np.random.default_rng([seed, 3])
 
     subscribers, traits = build_population(n, cfg, cal, rng_pop)
-    eng = Engine(traits, cal)
+    from .engine import PARAMS
+    scale = cfg["truth_world"]["effect_scale"]
+    eng = Engine(traits, cal, params={"kappa": {k: v * scale for k, v in PARAMS["kappa"].items()}})
     camp = Campaigns(eng, cal, cfg, rng_camp)
     _log(f"population built: {n:,} subscribers")
 
