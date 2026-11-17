@@ -153,3 +153,67 @@ The provisional SQL is gone. Phase 1 headlines now read net ARPPU ৳148 and net
 
 **2.10 Warehouse size**
 394 MB DuckDB file, built in about 25 seconds from raw Parquet. It is gitignored and rebuilt by `run.py`. The Streamlit app will read small precomputed outputs, not the warehouse.
+
+---
+
+## Phase 3: Churn and CLV models (2026-11-17)
+
+### Technical choices
+
+**3.1 What we predict**
+
+`churn_90d` = the subscriber goes silent within the next 90 days **and** stays silent for 90 days. It covers subscribers already slowing down as well as those who will start to.
+- It is the same definition as the pilot outcome (2.7), so the churn model and the uplift models in Phase 5 measure the same thing.
+- **Trade-off:** labels need 180 days of future data, so the latest labelled snapshot is 2026-01-01.
+- About 16–19% of the active base is in this state in any quarter.
+
+**3.2 Strictly out-of-time backtest**
+
+| Role | Snapshots | Notes |
+|---|---|---|
+| Train | Apr–Jun 2025 | |
+| Calibrate (isotonic) | Jul 2025 | |
+| Test | Jan 2026 | Every training and calibration label is observable before the test date |
+
+Production retrains on Apr–Oct 2025, calibrates on Jan 2026 and scores the active base on 2026-07-01.
+
+**3.3 LightGBM vs logistic regression**
+
+LightGBM wins, but narrowly: AUC 0.798 vs 0.790 and top-decile lift 4.5 vs 4.3. **I keep LightGBM** for its slightly better ranking and native SHAP, and I'll say plainly in interviews that a logistic regression gets about 95% of the way there. The real gain is over **today's win-back rule**: contacting the same number of people, the model reaches 54% of churners against the rule's 24%.
+
+**3.4 Honest limitation: early warning is hard**
+
+Among subscribers who recharged in the last 14 days (78% of the base), AUC drops to 0.66 and top-decile lift to 2.6. Most of the model's power comes from behaviour that is already declining: "activity falling off" is 48% of its signal. This is expected because planted churn decisions are partly random. It also means the campaign window is short.
+
+**3.5 Drivers explained in business language, not SHAP plots**
+
+Feature SHAP values are grouped into 8 business themes. Each theme gets a measured contrast on the test set and a CVM action, for example "No pack bought in 90 days: 34% churn vs 10% for regular pack buyers". See `reports/phase3/summary.md`.
+
+**3.6 CLV: BG/NBD + Gamma-Gamma implemented in scipy**
+
+- **Inputs:** transactions are recharge days, measured in weeks. Monetary value is contribution margin per recharge.
+- **Left truncation:** existing subscribers are "born" at their first recharge in the window. Their pre-2025 tenure is ignored, which is a known simplification.
+- **Testing:** the plan said "test against published reference results", but that dataset can't be fetched offline. Instead, tests **simulate customers from known parameters and check the fit recovers them**. That's a stronger correctness test.
+- **Gamma-Gamma assumption:** monetary value is independent of frequency (measured correlation −0.03).
+
+**3.7 CLV baseline = run-rate**
+
+Average monthly margin over the last 6 months × 12, which is what most operators use. Results:
+
+| Model | Holdout MAE (H1 2026) | Holdout total error | Rank vs true CLV |
+|---|---|---|---|
+| BG/NBD + GG | ৳169 | −3.0% | 0.82 |
+| Run-rate | ৳212 | +4.5% | 0.71 |
+
+The run-rate baseline **overstates total 12-month CLV by 10.8% against the planted truth**, because it assumes nobody leaves.
+
+**3.8 Validation against planted truth**
+
+On the production scores (2026-07-01), compared with the hidden 12 months:
+- **Every observable planted driver is recovered.** Rank correlation with model risk: engagement +0.51, tenure +0.41, first-90-days +0.34, kiosk +0.19, second SIM +0.18, network +0.13.
+- **Division ranking:** model risk orders the 8 divisions exactly by planted network quality (rank correlation 1.00).
+- **Pure-noise base hazard:** weakly correlated at +0.05, as it should be.
+
+### Business call for you
+
+**B3.1 Risk-band cut-offs** (used by the Phase 4 segmentation). Options are below. **Key fact:** the riskiest 10% hold 45% of expected churners but only 21% of the margin at risk. Their average 12-month CLV is ৳454, against ৳1,310 for low-risk subscribers.

@@ -44,7 +44,7 @@ def phase2_report(cfg: dict, fault_injection: bool = True) -> dict:
                  "churn_rate", "dormancy_rate", "recharge_frequency", "avg_recharge_size",
                  "data_gb_per_smartphone_user", "reactivations"]
     k = m.many(kpi_names)
-    k.to_csv(out / "kpi_monthly.csv", index=False)
+    k.round(6).to_csv(out / "kpi_monthly.csv", index=False)  # rounded: parallel float sums differ in the last digit
     pilot = m.get("pilot_retention_uplift", by=[]).merge(
         m.get("incremental_revenue", by=[])[["arm", "incremental_revenue"]], on="arm")
     pilot.to_csv(out / "pilot_preview.csv", index=False)

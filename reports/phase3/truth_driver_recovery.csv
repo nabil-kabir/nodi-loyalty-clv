@@ -1,0 +1,8 @@
+planted_driver,component,spearman_with_model_risk,recovered
+Losing wallet share to a second SIM,drv_wallet_share,0.1773116464047035,yes
+Low engagement (hidden trait),drv_engagement,0.5146729289935926,yes
+Weak network in their area,drv_network_quality,0.130876156875693,yes
+Short tenure,drv_tenure,0.41189421354887784,yes
+First 90 days after activation,drv_new_sub,0.3407075034023343,yes
+Activation-kiosk acquisition (first 6 months),drv_kiosk,0.1866817018047761,yes
+Idiosyncratic base hazard (pure noise to the model),drv_base,0.04729843251195392,weak

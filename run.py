@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 
 from nodi.config import load_config  # noqa: E402
 
-STEPS = ["simulate", "warehouse", "report"]
+STEPS = ["simulate", "warehouse", "models", "report"]
 
 
 def main():
@@ -26,12 +26,18 @@ def main():
     if "warehouse" in steps:
         from nodi.warehouse.build import build_warehouse
         build_warehouse(cfg)
+    if "models" in steps:
+        from nodi.models.run import run_models
+        run_models(cfg)
     if "report" in steps:
         from nodi.validate.phase1 import phase1_report
+        from nodi.validate.phase3 import phase3_validation
         from nodi.warehouse.report import phase2_report
         phase1_report(cfg)
         print("[report] phase 2 (metrics, data quality, fault injection)", flush=True)
         print(phase2_report(cfg), flush=True)
+        print("[report] phase 3 validation against planted truth", flush=True)
+        phase3_validation(cfg)
 
 
 if __name__ == "__main__":

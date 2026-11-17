@@ -1,0 +1,70 @@
+{
+  "churn": {
+    "spearman_pred_vs_true_p": 0.47990380926087406,
+    "mean_pred": 0.15834429905655867,
+    "mean_true_p": 0.1390441282841199,
+    "top_decile_share_of_expected_churners": 0.45218169852210655
+  },
+  "drivers": {
+    "table": [
+      {
+        "planted_driver": "Losing wallet share to a second SIM",
+        "component": "drv_wallet_share",
+        "spearman_with_model_risk": 0.1773116464047035,
+        "recovered": "yes"
+      },
+      {
+        "planted_driver": "Low engagement (hidden trait)",
+        "component": "drv_engagement",
+        "spearman_with_model_risk": 0.5146729289935926,
+        "recovered": "yes"
+      },
+      {
+        "planted_driver": "Weak network in their area",
+        "component": "drv_network_quality",
+        "spearman_with_model_risk": 0.130876156875693,
+        "recovered": "yes"
+      },
+      {
+        "planted_driver": "Short tenure",
+        "component": "drv_tenure",
+        "spearman_with_model_risk": 0.41189421354887784,
+        "recovered": "yes"
+      },
+      {
+        "planted_driver": "First 90 days after activation",
+        "component": "drv_new_sub",
+        "spearman_with_model_risk": 0.3407075034023343,
+        "recovered": "yes"
+      },
+      {
+        "planted_driver": "Activation-kiosk acquisition (first 6 months)",
+        "component": "drv_kiosk",
+        "spearman_with_model_risk": 0.1866817018047761,
+        "recovered": "yes"
+      },
+      {
+        "planted_driver": "Idiosyncratic base hazard (pure noise to the model)",
+        "component": "drv_base",
+        "spearman_with_model_risk": 0.04729843251195392,
+        "recovered": "weak"
+      }
+    ],
+    "division_rank_corr_network_vs_risk": 1.0
+  },
+  "clv": {
+    "bgnbd_gg": {
+      "spearman": 0.8230345193161426,
+      "mae": 263.26458953677235,
+      "total_bias": 0.027604311270600812,
+      "top20_true_value_capture": 0.3806650264486549
+    },
+    "run_rate": {
+      "spearman": 0.7110013730391983,
+      "mae": 401.47735309038796,
+      "total_bias": 0.10763729177388082,
+      "top20_true_value_capture": 0.36165813567626676
+    },
+    "oracle_top20_capture": 0.40814987743476533
+  }
+}

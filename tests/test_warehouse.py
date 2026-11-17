@@ -34,7 +34,8 @@ def test_every_metric_is_fully_documented(m):
 
 def test_every_available_metric_executes(m):
     for name, d in m.defs.items():
-        if d.get("available_from"):
+        if not m.available(name):  # model produced by a later phase (may run earlier in the session)
+            assert d.get("available_from")
             with pytest.raises(MetricNotAvailable):
                 m.get(name)
             continue

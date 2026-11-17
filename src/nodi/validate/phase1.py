@@ -141,5 +141,5 @@ def phase1_report(cfg: dict) -> dict:
     lines += ["", "## Monthly KPIs (metrics.yml)", "", k.round(3).to_string(index=False),
               "", "## Planted response groups (share by offer)", "", share.round(1).to_string()]
     (out / "summary.md").write_text("\n".join(lines), encoding="utf-8")
-    k.to_csv(out / "monthly_kpis.csv", index=False)
+    k.round(6).to_csv(out / "monthly_kpis.csv", index=False)
     return headline
