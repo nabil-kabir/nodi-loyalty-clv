@@ -1,0 +1,22 @@
+from pathlib import Path
+
+import pytest
+
+from nodi.config import load_config
+from nodi.simulate.run import simulate
+
+N_TEST = 3000
+
+
+def small_cfg(data_dir: Path) -> dict:
+    return load_config(data_dir=data_dir, overrides={
+        "simulation": {"n_subscribers": N_TEST, "future_paths": 1},
+    })
+
+
+@pytest.fixture(scope="session")
+def sim(tmp_path_factory):
+    d = tmp_path_factory.mktemp("sim")
+    cfg = small_cfg(d)
+    simulate(cfg)
+    return cfg

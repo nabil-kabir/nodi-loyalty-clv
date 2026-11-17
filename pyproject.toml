@@ -1,0 +1,12 @@
+[project]
+name = "nodi"
+version = "0.1.0"
+description = "Prepaid loyalty & CLV decision engine for a fictional Bangladeshi operator (synthetic data)"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

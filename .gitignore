@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+data_sample/
+*.duckdb
+*.duckdb.wal
+.env
+.streamlit/secrets.toml
+
+# personal brief (job-search context) kept out of the public repo
+PROJECT_BRIEF.md

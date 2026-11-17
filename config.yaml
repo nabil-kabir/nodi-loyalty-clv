@@ -1,0 +1,42 @@
+# Nodi Telecom (FICTIONAL operator) — single configuration file.
+# Every market number here is synthetic; see ASSUMPTIONS.md for the basis of each.
+
+seed: 20261117
+
+simulation:
+  n_subscribers: 200000
+  sample_n_subscribers: 20000      # used by `python run.py --sample`
+  start_date: "2025-01-01"         # first observed day
+  observed_months: 18              # observed window: 2025-01-01 .. 2026-06-30
+  burn_in_days: 90                 # simulated but not written; seeds realistic state at day 0
+  future_days: 365                 # hidden horizon for true CLV (never written to data/raw)
+  initial_base_share: 0.65         # share of subscribers already active before the window
+  future_paths: 4                  # Monte Carlo paths per arm for ground-truth expectations
+  price_shock_date: "2025-07-01"   # fictional tariff increase event
+  price_shock_days: 60
+
+churn:
+  churn_days: 90                   # N days without a revenue event = churned
+  dormant_days: 30                 # early-warning "dormant" threshold
+
+economics:
+  net_revenue_ratio: 0.72          # net revenue per ৳1 of gross recharge (after VAT/SD/surcharge)
+  contribution_margin_on_net: 0.78 # after BTRC revenue share, SOF, commissions, variable network cost
+  network_cost_per_gb_bdt: 5.0     # marginal cost of delivering 1 GB (assumption)
+
+pilot:                             # randomised campaign inside the observed window
+  start_date: "2026-01-01"
+  n_subscribers: 40000             # scaled proportionally in sample mode
+  window_days: 90
+
+truth_labels:                      # how planted response groups are labelled (per offer)
+  persuadable_min_uplift: 0.03     # >= +3pp absolute retention uplift
+  sleeping_dog_max_uplift: -0.005  # offer raises churn by >= 0.5pp
+  sure_thing_max_churn: 0.08       # baseline 90-day churn prob below 8%
+  lost_cause_min_churn: 0.50       # baseline 90-day churn prob above 50%
+
+llm:
+  model: claude-sonnet-5-5
+
+budget:
+  quarterly_bdt: 10000000          # ৳1 crore
