@@ -66,7 +66,9 @@ def main():
         phase5_validation(cfg)
     if "export" in steps:
         from nodi.export import export_app_data
+        from nodi.validate.linkedin import make_linkedin_charts
         print("[export] app_data:", export_app_data(cfg), flush=True)
+        print("[export] LinkedIn charts:", [p.name for p in make_linkedin_charts(cfg)], flush=True)
 
 
 if __name__ == "__main__":
