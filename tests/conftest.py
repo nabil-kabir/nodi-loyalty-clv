@@ -20,3 +20,10 @@ def sim(tmp_path_factory):
     cfg = small_cfg(d)
     simulate(cfg)
     return cfg
+
+
+@pytest.fixture(scope="session")
+def wh(sim):
+    from nodi.warehouse.build import build_warehouse
+    build_warehouse(sim)
+    return sim

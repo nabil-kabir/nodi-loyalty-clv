@@ -1,0 +1,6 @@
+fault,caught,checks_fired
+Same day's recharge file loaded twice,True,"fct_recharge_no_exact_duplicates (FAIL), daily_volume_anomaly (WARN), raw_vs_warehouse_rows (FAIL), raw_vs_warehouse_value (FAIL), snapshot_vs_fact_revenue (FAIL)"
+A day of recharges missing (file never arrived),True,"every_day_has_recharges (FAIL), raw_vs_warehouse_rows (FAIL), raw_vs_warehouse_value (FAIL), snapshot_vs_fact_revenue (FAIL)"
+Reversal booked as a negative recharge,True,"recharge_amount_positive (FAIL), recharge_amount_known_denomination (WARN), raw_vs_warehouse_value (FAIL), snapshot_vs_fact_revenue (FAIL)"
+Orphan subscriber IDs from a CRM mismatch,True,usage_fk_subscriber (FAIL)
+Handset table wrong: smartphone tagged as feature phone,True,feature_phone_no_data (WARN)

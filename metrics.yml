@@ -1,0 +1,258 @@
+# Nodi Telecom (FICTIONAL): governed KPI definitions. Every chart, model and app number uses these.
+#
+# How it works
+#   model      : the warehouse view the metric is computed from (every model has a month_start column)
+#   expression : SQL aggregate. {{ other_metric }} reuses another metric's expression, so each
+#                KPI is defined exactly once
+#   filter     : optional WHERE clause applied before aggregating
+#   type       : aggregate (default) | experiment_lift (treated arm vs randomised control)
+#   available_from : the phase that first produces the model (the metric is listed but not computable before then)
+#
+# Slice any metric by any column of its model, e.g. metric("arpu", by=["month_start", "division"]).
+# Economics constants (net revenue ratio, contribution margin) are applied once at load time
+# from config.yaml; see ASSUMPTIONS.md D01-D02.
+
+version: 1
+
+owners:
+  cvm: "CVM & Loyalty (Head of CVM)"
+  finance: "Finance: Revenue Assurance"
+  bi: "BI & Analytics"
+  ds: "Data Science"
+
+metrics:
+
+  # ---------------------------------------------------------------- base
+  - name: active_base
+    label: Active base
+    unit: subscribers
+    owner: bi
+    model: mart_subscriber_month
+    expression: COUNT(*) FILTER (WHERE is_active_start)
+    definition: >
+      Subscribers with at least one revenue event in the 90 days before the first day of the month.
+      A revenue event is a recharge (including packs bought directly via MFS/app); activation counts
+      as the first event. This is the denominator for churn, so active base and churners reconcile.
+    decision: "DECISIONS 2.2: 90-day revenue-active (you, 2026-11-17)"
+
+  - name: paying_subscribers
+    label: Paying subscribers
+    unit: subscribers
+    owner: bi
+    model: mart_subscriber_month
+    expression: COUNT(*) FILTER (WHERE is_paying)
+    definition: Subscribers with at least one recharge in the calendar month.
+
+  - name: new_subscribers
+    label: New subscribers
+    unit: subscribers
+    owner: bi
+    model: mart_subscriber_month
+    expression: COUNT(*) FILTER (WHERE is_new_in_month)
+    definition: Subscribers whose first-ever revenue event (activation) falls in the month.
+
+  # ---------------------------------------------------------------- revenue
+  - name: gross_recharge
+    label: Gross recharge
+    unit: bdt
+    owner: finance
+    model: mart_subscriber_month
+    expression: SUM(gross_recharge_bdt)
+    definition: Total value of recharges in the month as paid by customers, including VAT, SD and surcharge.
+
+  - name: net_revenue
+    label: Net revenue
+    unit: bdt
+    owner: finance
+    model: mart_subscriber_month
+    expression: SUM(net_revenue_bdt)
+    definition: >
+      Gross recharge after VAT, supplementary duty and surcharge (gross x 0.72, ASSUMPTIONS D01).
+      Recharge is used as the revenue proxy; balance consumption timing is not modelled.
+
+  - name: contribution_margin
+    label: Contribution margin
+    unit: bdt
+    owner: finance
+    model: mart_subscriber_month
+    expression: SUM(margin_bdt)
+    definition: >
+      Net revenue after BTRC revenue share, SOF, channel commission and variable network cost
+      (net x 0.78, ASSUMPTIONS D02). This is the currency for CLV and offer ROI.
+
+  - name: arpu
+    label: ARPU (per paying subscriber)
+    unit: bdt
+    owner: finance
+    model: mart_subscriber_month
+    expression: "{{ net_revenue }} / NULLIF({{ paying_subscribers }}, 0)"
+    definition: >
+      HEADLINE ARPU. Monthly net revenue divided by subscribers who recharged in that month
+      (sometimes called ARPPU). Steadier than active-base ARPU, but NOT directly comparable with
+      operators' published ARPU, which is per active subscriber (use arpu_active_base for that).
+    decision: "DECISIONS 2.1: ARPPU as headline (you, 2026-11-17)"
+
+  - name: arpu_active_base
+    label: ARPU (per active subscriber)
+    unit: bdt
+    owner: finance
+    model: mart_subscriber_month
+    expression: "{{ net_revenue }} / NULLIF({{ active_base }}, 0)"
+    definition: >
+      Secondary ARPU: monthly net revenue divided by the 90-day active base at the start of the
+      month. Use only for comparison with published operator ARPU (Robi Q1 2024: Tk140).
+
+  # ---------------------------------------------------------------- recharge behaviour
+  - name: recharge_frequency
+    label: Recharges per paying subscriber
+    unit: per_month
+    owner: cvm
+    model: mart_subscriber_month
+    expression: "SUM(n_recharges)::DOUBLE / NULLIF({{ paying_subscribers }}, 0)"
+    definition: Average number of recharges in the month per subscriber who recharged at least once.
+
+  - name: avg_recharge_size
+    label: Average recharge
+    unit: bdt
+    owner: cvm
+    model: mart_subscriber_month
+    expression: "{{ gross_recharge }} / NULLIF(SUM(n_recharges), 0)"
+    definition: Average gross value of a single recharge.
+
+  - name: recharge_count
+    label: Recharge transactions
+    unit: count
+    owner: bi
+    model: mart_recharge
+    expression: COUNT(*)
+    definition: Number of recharge transactions. Transaction-level, so it can be sliced by date, amount (gross_bdt) or channel.
+
+  - name: recharge_value
+    label: Recharge value (gross)
+    unit: bdt
+    owner: finance
+    model: mart_recharge
+    expression: SUM(gross_bdt)
+    definition: >
+      Gross value of recharge transactions. Transaction-level twin of gross_recharge, for daily or
+      per-denomination views; the two reconcile (DQ check snapshot_vs_fact_revenue).
+
+  - name: mfs_recharge_share
+    label: MFS share of recharges
+    unit: pct
+    owner: cvm
+    model: mart_recharge
+    expression: AVG((channel = 'mfs')::INT)
+    definition: Share of recharge transactions made through mobile financial services (bKash-style wallets).
+
+  - name: data_gb_per_smartphone_user
+    label: Data per smartphone user
+    unit: gb
+    owner: cvm
+    model: mart_subscriber_month
+    filter: is_smartphone AND active_days > 0
+    expression: SUM(data_mb) / 1024.0 / COUNT(*)
+    definition: Average monthly mobile data (GB) per smartphone subscriber with any usage in the month.
+
+  # ---------------------------------------------------------------- churn & retention
+  - name: churners
+    label: Churners
+    unit: subscribers
+    owner: cvm
+    model: mart_subscriber_month
+    expression: COUNT(*) FILTER (WHERE churned_in_month)
+    definition: >
+      Subscribers who reach 90 consecutive days without a revenue event during the month
+      (churn date = last revenue event + 90 days). The window is config churn.churn_days.
+
+  - name: churn_rate
+    label: Monthly churn rate
+    unit: pct
+    owner: cvm
+    model: mart_subscriber_month
+    expression: "{{ churners }}::DOUBLE / NULLIF({{ active_base }}, 0)"
+    definition: Churners in the month divided by the active base at the start of the month.
+
+  - name: dormancy_rate
+    label: Dormancy rate (early warning)
+    unit: pct
+    owner: cvm
+    model: mart_subscriber_month
+    expression: "COUNT(*) FILTER (WHERE dormant_in_month)::DOUBLE / NULLIF({{ active_base }}, 0)"
+    definition: >
+      Subscribers reaching 30 days without a revenue event during the month, as a share of the
+      active base. Roughly 1 in 3 dormant subscribers goes on to churn.
+
+  - name: reactivations
+    label: Reactivations
+    unit: subscribers
+    owner: cvm
+    model: mart_subscriber_month
+    expression: COUNT(*) FILTER (WHERE reactivated_in_month)
+    definition: Previously churned subscribers (90+ days silent) who recharge again in the month.
+
+  # ---------------------------------------------------------------- experiment (randomised pilot)
+  - name: pilot_retention_uplift
+    label: Retention uplift vs control
+    unit: pp
+    owner: ds
+    type: experiment_lift
+    model: mart_pilot_outcome
+    arm_column: arm
+    control: control
+    outcome: "1 - churned::INT"
+    scale: per_subscriber
+    definition: >
+      Retention rate of an offer arm minus the randomised control arm in the Jan-2026 pilot.
+      Churned = went silent before the 90-day pilot window ended and stayed silent 90 days.
+
+  - name: incremental_revenue
+    label: Incremental net revenue
+    unit: bdt
+    owner: ds
+    type: experiment_lift
+    model: mart_pilot_outcome
+    arm_column: arm
+    control: control
+    outcome: net_revenue_90d
+    scale: total
+    definition: >
+      (Average 90-day net revenue per treated subscriber minus the same for control) x treated
+      subscribers. Only randomised comparisons count as incremental, never pre/post or vs. untargeted.
+
+  - name: incremental_margin_before_cost
+    label: Incremental margin (before offer cost)
+    unit: bdt
+    owner: ds
+    type: experiment_lift
+    model: mart_pilot_outcome
+    arm_column: arm
+    control: control
+    outcome: margin_90d
+    scale: total
+    definition: >
+      Incremental contribution margin within the 90-day window, before deducting what the offer
+      cost. Offer cost is added in Phase 5; the long-term value of retained subscribers comes from CLV.
+
+  # ---------------------------------------------------------------- value (later phases)
+  - name: clv_12m
+    label: Predicted 12-month CLV
+    unit: bdt
+    owner: ds
+    model: scores_subscriber
+    available_from: 3
+    expression: AVG(clv_12m_pred)
+    definition: >
+      Model-predicted contribution margin a subscriber will generate over the next 12 months
+      (BG/NBD + Gamma-Gamma, Phase 3). Shown as an average when aggregated.
+
+  - name: revenue_at_risk
+    label: Margin at risk (12m)
+    unit: bdt
+    owner: cvm
+    model: scores_subscriber
+    available_from: 3
+    expression: SUM(clv_12m_pred * churn_prob_90d)
+    definition: >
+      Sum over subscribers of predicted 12-month CLV x predicted 90-day churn probability.
+      This is the value the retention budget is trying to protect.

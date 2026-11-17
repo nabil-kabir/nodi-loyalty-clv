@@ -96,3 +96,60 @@ Persuadable / sure thing / lost cause / sleeping dog per offer. This is the "wor
 
 **B1.2 Region and handset mix**
 Division shares come from Census 2022. Urban share and handset tiers are assumptions (see ASSUMPTIONS.md). Changing them reshapes segments in Phase 4.
+
+---
+
+## Phase 2: Governed data model (2026-11-17)
+
+### Business calls (yours)
+
+**2.1 Headline ARPU = net revenue ÷ paying subscribers (ARPPU)**
+You chose this over ARPU per active subscriber and over gross recharge per active subscriber.
+- On the 200k build: **৳148 per paying subscriber** vs ৳133 per active subscriber.
+- **Trade-off:** it is steadier and reflects what a paying customer is worth. It is *not* comparable with operators' published ARPU (Robi: ৳140, per active subscriber).
+- `arpu_active_base` is kept as a clearly labelled secondary metric. Any external comparison must use it, and the metric definition says so.
+
+**2.2 Active subscriber = revenue event in the prior 90 days**
+You chose this over 30-day revenue-active and over 90-day any-activity. It is consistent with the churn definition. As a result, the active base reconciles exactly every month:
+
+`active(m+1) = active(m) − churners(m) + new(m) + reactivated(m)`
+
+That identity is enforced as a data-quality error check.
+
+### Technical choices
+
+**2.3 Star schema**
+- **Dimensions:** date (with festival periods), subscriber, pack, offer, campaign.
+- **Facts:** recharge, pack purchase, daily usage, offer exposure, inactivity spell, plus a **monthly subscriber snapshot**: 200k × 18 months, about 3M rows. The snapshot is the standard CVM grain and will feed the Phase 3 models.
+
+Metrics query only three `mart_*` views. The facts can change underneath without touching any KPI.
+
+**2.4 An in-house metrics layer instead of dbt / MetricFlow / Cube**
+`metrics.yml` plus about 150 lines of Python (`nodi/metrics.py`). Each KPI is defined once:
+- Composite KPIs reference others (`{{ net_revenue }} / {{ paying_subscribers }}`).
+- Any KPI can be sliced by any column of its model.
+- Experiment lifts are a metric type.
+
+**Trade-off:** no caching or access control. That's fine at portfolio scale, and it avoids a heavy dependency a reviewer would have to install.
+
+**2.5 Economics applied once at load time**
+Net revenue (×0.72) and margin (×0.78) are columns in `fct_recharge`, so no query re-applies them inconsistently.
+
+**2.6 Inactivity spells are re-derived when the warehouse is built**
+Changing `churn.churn_days` in config takes effect without re-simulating.
+
+**2.7 Pilot outcome definition (observable)**
+"Churned" = went silent before the 90-day pilot window ended **and** stayed silent 90 days. That is observable by 2026-06-30.
+- **Known bias:** subscribers who decide to leave late in the window still have revenue near its end, so they aren't counted. This is an undercount, and it is the same in every arm, so lifts are unbiased.
+- **Preview** (offer cost not yet deducted; Phase 5): blanket offers move retention by only **−0.0 to +0.8pp** versus control. That is the "harder world" showing.
+
+**2.8 Data quality**
+- **28 checks** across uniqueness, referential integrity, completeness, validity, temporal consistency, reconciliation, experiment integrity and KPI plausibility (the plausibility checks run through the governed metrics).
+- **Severity:** errors fail the build; warnings are reported.
+- **Fault injection:** 5 realistic faults are planted in copies of the warehouse (double-loaded file, missing day, negative reversal, orphan IDs, mis-tagged handsets). The report shows which checks fire for each. **All 5 are caught.** A test enforces this.
+
+**2.9 Phase 1 report moved onto governed metrics**
+The provisional SQL is gone. Phase 1 headlines now read net ARPPU ৳148 and net active-base ARPU ৳133. Previously the report showed gross recharge per active subscriber, ৳185. The data is unchanged; only the definitions are.
+
+**2.10 Warehouse size**
+394 MB DuckDB file, built in about 25 seconds from raw Parquet. It is gitignored and rebuilt by `run.py`. The Streamlit app will read small precomputed outputs, not the warehouse.
