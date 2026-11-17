@@ -62,4 +62,4 @@
 
 - Scored 132,947 active subscribers.
 - Predicted 12-month CLV: total ৳15.19 crore, median ৳1,012.
-- Margin at risk (CLV x churn probability): ৳1.61 crore.
+- Margin at risk (value if retained x churn probability): ৳1.99 crore.

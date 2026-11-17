@@ -27,3 +27,18 @@ def wh(sim):
     from nodi.warehouse.build import build_warehouse
     build_warehouse(sim)
     return sim
+
+
+@pytest.fixture(scope="session")
+def modelled(wh):
+    from nodi.models.run import run_models
+    summary = run_models(wh)
+    return wh, summary
+
+
+@pytest.fixture(scope="session")
+def segmented(modelled):
+    from nodi.segments.build import build_segments
+    cfg, _ = modelled
+    build_segments(cfg)
+    return cfg

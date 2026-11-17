@@ -116,5 +116,25 @@ Generated from `metrics.yml`. Every number in this project comes from one of the
 
 ### `revenue_at_risk`: Margin at risk (12m)
 
-- **Definition:** Sum over subscribers of predicted 12-month CLV x predicted 90-day churn probability. This is the value the retention budget is trying to protect.
+- **Definition:** Sum over subscribers of 90-day churn probability x the 12-month margin they would bring if they stay (BG/NBD + Gamma-Gamma, conditional on being alive). This is the value the retention budget is trying to protect, and the ranking used for value-at-risk bands (DECISIONS B3.1, 4.2). Not CLV x churn probability: CLV already discounts for leaving, so that would double-count.
 - **Owner:** CVM & Loyalty (Head of CVM)  |  **Unit:** bdt  |  **Model:** `scores_subscriber`  |  **Available from:** Phase 3
+
+### `value_if_retained`: Value if retained (12m)
+
+- **Definition:** Average predicted 12-month contribution margin a subscriber brings if they do not churn. This is what a successful save is worth, before offer cost.
+- **Owner:** Data Science  |  **Unit:** bdt  |  **Model:** `scores_subscriber`  |  **Available from:** Phase 3
+
+### `net_revenue_at_risk`: Net revenue at risk (12m)
+
+- **Definition:** revenue_at_risk expressed as net revenue instead of contribution margin (divided by the contribution margin ratio, ASSUMPTIONS D02). Use when Finance asks "how much revenue".
+- **Owner:** Finance: Revenue Assurance  |  **Unit:** bdt  |  **Model:** `scores_subscriber`  |  **Available from:** Phase 4
+
+### `scored_subscribers`: Scored subscribers
+
+- **Definition:** Active subscribers (90-day revenue-active) scored by the churn and CLV models on the score date.
+- **Owner:** Data Science  |  **Unit:** subscribers  |  **Model:** `scores_subscriber`  |  **Available from:** Phase 3
+
+### `expected_churners`: Expected churners (90 days)
+
+- **Definition:** Sum of calibrated 90-day churn probabilities, i.e. how many scored subscribers we expect to lose.
+- **Owner:** Data Science  |  **Unit:** subscribers  |  **Model:** `scores_subscriber`  |  **Available from:** Phase 3

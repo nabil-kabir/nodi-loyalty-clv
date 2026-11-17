@@ -1,0 +1,67 @@
+# Nodi Telecom (FICTIONAL): value x risk segmentation. Business calls B3.1 + B4.1 (DECISIONS.md).
+#
+# Axis 1: value-at-risk band. Rank by predicted 12-month CLV x 90-day churn probability.
+#         High = top 10%, Medium = next 20%, Low = rest.
+# Axis 2: churn stage, i.e. why/when they're at risk. First match wins, top to bottom:
+#   gone_quiet : no revenue event for >= quiet_days
+#   new        : tenure < new_months
+#   slipping   : active days < slipping_activity_ratio x the previous 30 days,
+#                OR recharges < slipping_recharge_ratio x the previous 30 days (with >= 2 before)
+#   steady     : everyone else
+
+thresholds:
+  var_band_high: 0.10
+  var_band_medium: 0.30
+  quiet_days: 21
+  new_months: 6
+  slipping_activity_ratio: 0.6
+  slipping_recharge_ratio: 0.5
+
+segments:
+  - id: 1
+    name: Fading high-value
+    cells: [[High, gone_quiet]]
+    stance: invest
+    action: Win back within 7 days with a personal outbound contact and a best-fit offer. They are valuable and already leaving.
+
+  - id: 2
+    name: Shaky newcomers
+    cells: [[High, new], [Medium, new]]
+    stance: invest
+    action: Run a 90-day onboarding journey (first-pack discount, usage tips). Fix the start rather than rescue the end.
+
+  - id: 3
+    name: Slipping valuables
+    cells: [[High, slipping], [Medium, slipping]]
+    stance: invest
+    action: Trigger the week activity halves, with an offer matched to usage (data or cashback), before they go quiet.
+
+  - id: 4
+    name: Valuable but exposed
+    cells: [[High, steady], [Medium, steady]]
+    stance: test
+    action: Use recognition, not discounts (tenure thank-you, service). Always keep a holdout, because many here would stay anyway.
+
+  - id: 5
+    name: Mid-value gone quiet
+    cells: [[Medium, gone_quiet]]
+    stance: low_cost
+    action: Send a low-cost reminder (free SMS plus a small bonus) and accept some loss.
+
+  - id: 6
+    name: Low-value lapsers
+    cells: [[Low, gone_quiet]]
+    stance: no_spend
+    action: No paid offer, free reminder SMS only. Many are secondary SIMs.
+
+  - id: 7
+    name: Low-value wobblers
+    cells: [[Low, new], [Low, slipping]]
+    stance: no_spend
+    action: Automated zero-cost nudges such as pack-expiry reminders. No budget.
+
+  - id: 8
+    name: Stable core
+    cells: [[Low, steady]]
+    stance: protect
+    action: Leave alone. No offers and capped marketing SMS, to avoid waking sleeping dogs by over-contacting.

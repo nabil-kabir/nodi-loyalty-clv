@@ -29,3 +29,5 @@ Production scores at 2026-07-01 compared with the hidden 12-month future that no
 | BG/NBD + Gamma-Gamma | 0.823 | 263 | +2.8% | 38% |
 | Run-rate baseline | 0.711 | 401 | +10.8% | 36% |
 | Perfect foresight (ceiling) | 1.000 | 0 | 0% | 41% |
+
+**Value if retained** (what a save protects; used for margin at risk, DECISIONS 4.2): Spearman 0.848, MAE ৳249, total bias -2.5% vs the planted 'nobody newly churns' counterfactual.

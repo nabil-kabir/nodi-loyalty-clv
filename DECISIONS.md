@@ -217,3 +217,58 @@ On the production scores (2026-07-01), compared with the hidden 12 months:
 ### Business call for you
 
 **B3.1 Risk-band cut-offs** (used by the Phase 4 segmentation). Options are below. **Key fact:** the riskiest 10% hold 45% of expected churners but only 21% of the margin at risk. Their average 12-month CLV is ৳454, against ৳1,310 for low-risk subscribers.
+
+> **Decided 2026-11-17: B3.1 = C, value-at-risk bands (you).**
+> - **Ranking:** subscribers are ordered by expected margin at risk = predicted 12-month CLV × 90-day churn probability.
+> - **Bands:** High = top 10%, Medium = next 20%, Low = the rest.
+> - **What High contains:** 31% of margin at risk and 26% of expected churners. That is in exchange for 45% of churners under rank-based bands.
+> - **Rationale:** budget follows margin, which is the Phase 5 objective. The risk-only view stays available as a secondary lens (`churn_decile`) so CVM can still see who is most likely to leave.
+
+---
+
+## Phase 4: Value × risk segmentation (2026-11-17)
+
+### Correction (found while building Phase 4)
+
+**4.1 Margin at risk was double-counting churn. Fixed.**
+- **The flaw:** the B3.1 options were sized with *CLV × churn probability*. BG/NBD CLV already discounts for the chance of leaving, so high-risk subscribers were penalised twice.
+- **The fix:** margin at risk = **churn probability × value if retained**, where value if retained = the BG/NBD expectation *conditional on still being a customer* × Gamma-Gamma margin. It is stored as `value_if_retained_12m`.
+- **Effect:**
+  - total margin at risk rises from ৳1.61 to **৳1.99 crore**
+  - the riskiest 10% hold 34% of it, not 21%
+  - their value if retained is ৳799, against ৳1,332 for low-risk subscribers
+- **Your call:** I raised this and you kept option C with the corrected formula.
+- **Truth:** the planted truth gained a matching "nobody newly churns for 12 months" arm. The prediction validates at Spearman 0.85, MAE ৳249, total bias −2.5%. The other arms are unchanged, because each one replays the same random numbers.
+
+### Business calls (yours)
+
+**4.2 Value-at-risk bands (B3.1 = C, corrected)**
+Rank by churn probability × value if retained. High = top 10%, Medium = next 20%, Low = rest.
+
+**4.3 Segmentation = value-at-risk band × churn stage (B4.1 = A)**
+You chose this over a classic CLV × risk grid and over value-at-risk × usage profile. The stage axis comes first so the segment says *why and when*, which the optimiser can't. The *which offer* question is left to Phase 5.
+
+- **Stages,** checked in this order: gone quiet (21+ days with no revenue event), new (under 6 months tenure), slipping (activity below 60% of the previous 30 days, or recharges below half), steady.
+- **12 cells → 8 named segments,** each with a stance and a one-line action. The thresholds, names and actions live in `segments.yml` and can be edited without touching code.
+
+### Technical choices
+
+**4.4 Every size comes from metrics.yml**
+`scores_subscriber` now carries the segment columns. New metrics: `scored_subscribers`, `expected_churners`, `value_if_retained`, `net_revenue_at_risk`. A test checks that segment totals reconcile to the governed totals.
+
+**4.5 Profile uses the over-indexed division, not the most common one**
+Dhaka is the most common division in every segment because it's the largest, so that told us nothing.
+
+### What validation against truth says (a hypothesis for Phase 5, not acted on)
+
+**4.6 Fading high-value looks like the biggest prize, but much of it is already gone.**
+
+| Fading high-value | Model | Planted truth |
+|---|---|---|
+| Share of margin at risk | 29% | 3% |
+| Already silently churned | — | 55% (still "active" under the 90-day rule) |
+| Value if retained | ৳989 | ৳513 |
+
+- **Planted incremental margin per subscriber** (before offer cost): ৳0–14 here, against ৳20–33 for Shaky newcomers and ৳26–30 for Valuable but exposed.
+- **Why it matters:** this is the classic case for uplift modelling over risk × value targeting. **I have not changed the segment's stance**, because acting on hidden truth would be peeking.
+- **Next:** Phase 5's uplift models, trained only on the observable pilot, should independently find that offers barely move "gone quiet" subscribers. If they do, segment 1's stance moves from *invest* to *test*, on observable evidence.

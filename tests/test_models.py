@@ -85,13 +85,6 @@ def test_snapshot_population_is_the_active_base(wh):
 
 
 # ---------------------------------------------------------------- pipeline
-@pytest.fixture(scope="module")
-def modelled(wh):
-    from nodi.models.run import run_models
-    summary = run_models(wh)
-    return wh, summary
-
-
 def test_pipeline_writes_scores_and_unlocks_metrics(modelled):
     cfg, summary = modelled
     con = connect(cfg)
@@ -103,6 +96,7 @@ def test_pipeline_writes_scores_and_unlocks_metrics(modelled):
     assert s.churn_prob_90d.between(0, 1).all()
     assert s.churn_decile.between(1, 10).all()
     assert (s.clv_12m_pred >= 0).all() and s.clv_12m_pred.notna().all()
+    assert (s.value_if_retained_12m >= s.clv_12m_pred - 1e-6).all()  # conditioning on alive can't lower value
     assert clv > 0 and len(risk) == 8
     assert summary["churn_backtest"]["lightgbm"]["auc"] > 0.65
 

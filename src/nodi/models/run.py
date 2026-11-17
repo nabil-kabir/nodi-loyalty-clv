@@ -129,13 +129,16 @@ def run_models(cfg: dict) -> dict:
         "churn_prob_90d": s.churn_prob_90d, "churn_decile": s.churn_decile.astype("int8"),
         "clv_12m_pred": s.clv_pred, "clv_12m_baseline": s.clv_baseline,
         "p_alive": s.p_alive, "exp_recharges_12m": s.exp_tx, "exp_margin_per_recharge": s.exp_margin_per_tx,
+        # BG/NBD expectation conditional on still being a customer: the value a save protects.
+        # (clv_12m_pred already discounts for leaving, so multiplying it by churn_prob double-counts.)
+        "value_if_retained_12m": s.exp_tx / s.p_alive.clip(lower=0.05) * s.exp_margin_per_tx,
     })
     summary["clv_production"] = {
         "params": {"bgnbd": {k_: float(v) for k_, v in vars(clv_p.bgnbd).items()},
                    "gamma_gamma": {k_: float(v) for k_, v in vars(clv_p.gg).items()}},
         "scored": len(scores), "total_clv_12m_bdt": float(scores.clv_12m_pred.sum()),
         "median_clv_12m_bdt": float(scores.clv_12m_pred.median()),
-        "margin_at_risk_bdt": float((scores.clv_12m_pred * scores.churn_prob_90d).sum()),
+        "margin_at_risk_bdt": float((scores.value_if_retained_12m * scores.churn_prob_90d).sum()),
     }
 
     # ================================================================ persist
@@ -300,6 +303,6 @@ def _write_summary(out, s, themes, stm, dec):
         f"- Scored {s['clv_production']['scored']:,} active subscribers.",
         f"- Predicted 12-month CLV: total ৳{s['clv_production']['total_clv_12m_bdt'] / 1e7:,.2f} crore, "
         f"median ৳{s['clv_production']['median_clv_12m_bdt']:,.0f}.",
-        f"- Margin at risk (CLV x churn probability): ৳{s['clv_production']['margin_at_risk_bdt'] / 1e7:,.2f} crore.",
+        f"- Margin at risk (value if retained x churn probability): ৳{s['clv_production']['margin_at_risk_bdt'] / 1e7:,.2f} crore.",
     ]
     (out / "summary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")

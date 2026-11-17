@@ -254,13 +254,19 @@ def _future_truth(eng: Engine, cal, cfg: dict, truth):
     lost0 = end_state.declining.copy()
     alive_idx = np.flatnonzero(exists0)
 
-    res = {a: {"rev365": np.zeros(n), "rev90": np.zeros(n), "p90": np.zeros(n)} for a in ARMS}
+    # "retained" = counterfactual where nobody takes a new churn decision for 12 months
+    # (subscribers already fading out at the start still leave). Gives the true value-if-retained.
+    arms = ARMS + ["retained"]
+    res = {a: {"rev365": np.zeros(n), "rev90": np.zeros(n), "p90": np.zeros(n)} for a in arms}
     realised = None
     deltas = {}
     for k in range(K):
-        for a in ARMS:
+        for a in arms:
             eng.s = end_state.copy()
-            if a != "control":
+            if a == "retained":
+                eng.s.treat_until[alive_idx] = start + cal.n_future
+                eng.s.treat_hmult[alive_idx] = 0.0
+            elif a != "control":
                 d_, _ = eng.apply_offer(a, alive_idx, start)
                 deltas[a] = d_
             rng = np.random.default_rng([cfg["seed"], 7777, k])
@@ -290,6 +296,7 @@ def _future_truth(eng: Engine, cal, cfg: dict, truth):
         "realised_margin_12m": np.where(exists0, realised * margin, 0.0),
         "true_gross_recharge_12m": np.where(exists0, ctrl["rev365"], 0.0),
         "true_p_churn_90d": np.where(exists0, ctrl["p90"], np.nan),
+        "true_margin_if_retained_12m": np.where(exists0, res["retained"]["rev365"] * margin, 0.0),
     })
     clv.to_parquet(truth / "clv_truth.parquet", index=False)
 

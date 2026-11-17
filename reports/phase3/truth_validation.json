@@ -65,6 +65,11 @@
       "total_bias": 0.10763729177388082,
       "top20_true_value_capture": 0.36165813567626676
     },
-    "oracle_top20_capture": 0.40814987743476533
+    "oracle_top20_capture": 0.40814987743476533,
+    "value_if_retained": {
+      "spearman": 0.8484341282907301,
+      "mae": 248.97653213621425,
+      "total_bias": -0.024520865441252204
+    }
   }
 }

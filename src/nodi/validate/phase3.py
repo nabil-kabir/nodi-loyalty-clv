@@ -79,6 +79,11 @@ def phase3_validation(cfg: dict) -> dict:
         }
     oracle_top = tv.rank(ascending=False, method="first") <= 0.2 * len(tv)
     clv_res["oracle_top20_capture"] = float(tv[oracle_top].sum() / tv.sum())
+    vt, vp = d.true_margin_if_retained_12m, d.value_if_retained_12m
+    clv_res["value_if_retained"] = {
+        "spearman": float(spearmanr(vp, vt).statistic), "mae": float((vp - vt).abs().mean()),
+        "total_bias": float(vp.sum() / vt.sum() - 1),
+    }
     res["clv"] = clv_res
 
     # ---------------- charts
@@ -127,7 +132,11 @@ def phase3_validation(cfg: dict) -> dict:
              "| Model | Spearman vs truth | MAE ৳ | Total bias | True value in predicted top 20% |", "|---|---:|---:|---:|---:|",
              *[f"| {n} | {m['spearman']:.3f} | {m['mae']:.0f} | {m['total_bias']:+.1%} | {m['top20_true_value_capture']:.0%} |"
                for n, m in [("BG/NBD + Gamma-Gamma", clv_res["bgnbd_gg"]), ("Run-rate baseline", clv_res["run_rate"])]],
-             f"| Perfect foresight (ceiling) | 1.000 | 0 | 0% | {clv_res['oracle_top20_capture']:.0%} |"]
+             f"| Perfect foresight (ceiling) | 1.000 | 0 | 0% | {clv_res['oracle_top20_capture']:.0%} |",
+             "",
+             "**Value if retained** (what a save protects; used for margin at risk, DECISIONS 4.2): "
+             f"Spearman {clv_res['value_if_retained']['spearman']:.3f}, MAE ৳{clv_res['value_if_retained']['mae']:,.0f}, "
+             f"total bias {clv_res['value_if_retained']['total_bias']:+.1%} vs the planted 'nobody newly churns' counterfactual."]
     (out / "truth_validation.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     (out / "truth_validation.json").write_text(json.dumps(res, indent=2), encoding="utf-8")
     return res
