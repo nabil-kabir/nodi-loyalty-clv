@@ -1,9 +1,7 @@
 segment_id,segment,targeted,true_inc_per_sub,sleeping_dog
-1,Fading high-value,674,22.629,0.034
-2,Shaky newcomers,1743,68.712,0.084
-3,Slipping valuables,720,35.342,0.053
-4,Valuable but exposed,5145,41.408,0.059
-5,Mid-value gone quiet,246,43.711,0.033
-6,Low-value lapsers,136,21.375,0.037
-7,Low-value wobblers,886,32.724,0.064
-8,Stable core,6936,30.057,0.064
+1,Fading high-value,765,21.25,0.034
+2,Shaky newcomers,1867,69.011,0.082
+3,Slipping valuables,767,33.794,0.052
+4,Valuable but exposed,5414,40.851,0.06
+5,Mid-value gone quiet,274,41.976,0.029
+8,Stable core,7480,29.285,0.066

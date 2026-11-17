@@ -41,6 +41,7 @@ truth_labels:                      # how planted response groups are labelled (p
 
 offers:                            # cost model (ASSUMPTIONS F01-F05). Cost is per subscriber who REDEEMS,
   contact_cost_bdt: 0.25           # plus the SMS contact cost for everyone targeted.
+  excluded_stances: [no_spend]     # BUSINESS CALL B5.4 "hybrid": segments 6-7 never get paid offers (all plans)
   cost_per_redeemer:               # economic = what Nodi really gives up; face = retail value (decision 0.5)
     bonus_data:        {economic: 10.0,  face: 73.0}   # 2 GB x Tk5/GB network cost | 2 GB at Data-3GB price/GB
     recharge_cashback: {economic: 25.0,  face: 25.0}   # 20% of a ~Tk125 qualifying recharge, capped at Tk30 (cash)
@@ -54,5 +55,5 @@ budget:
   quarterly_bdt: 10000000          # ৳1 crore, at OPERATOR scale
   operator_scale: 100              # BUSINESS CALL B5.1: our 200k base is a 1% sample of a ~13.3M-active operator.
                                    # Sample-level ৳ and subscriber counts x 100 = operator level.
-  holdout_share: 0.05              # BUSINESS CALL B5.2 (default until decided): random holdout from the targeted list
+  holdout_share: 0.05              # BUSINESS CALL B5.2 (decided): random holdout from the targeted list
   slider_max_bdt: 30000000         # app slider range (operator scale)

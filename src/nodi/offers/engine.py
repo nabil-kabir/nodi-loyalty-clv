@@ -20,9 +20,15 @@ def production_frame(con, pilot: pd.DataFrame) -> pd.DataFrame:
     for c in CATEGORICAL:
         X[c] = pd.Categorical(X[c].astype(str), categories=pilot[c].cat.categories)
     sc = con.execute("""SELECT s.sub_id, s.value_if_retained_12m, s.churn_prob_90d, s.churn_decile,
-                               g.segment_id, g.segment, g.margin_at_risk_bdt
+                               g.segment_id, g.segment, g.stance, g.margin_at_risk_bdt
                         FROM ml_scores s JOIN ml_segments g USING (sub_id)""").df()
     return X.merge(sc, on="sub_id").sort_values("sub_id").reset_index(drop=True)
+
+
+def eligible(X: pd.DataFrame, cfg: dict) -> pd.DataFrame:
+    """Subscribers allowed to receive paid offers under the segment guardrail (DECISIONS B5.4)."""
+    excluded = cfg["offers"].get("excluded_stances", [])
+    return X[~X.stance.isin(excluded)].reset_index(drop=True)
 
 
 def offer_scores(X: pd.DataFrame, um: U.UpliftModel, rm: U.RedemptionModel, cfg: dict) -> pd.DataFrame:

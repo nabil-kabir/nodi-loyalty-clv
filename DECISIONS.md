@@ -345,3 +345,23 @@ Past win-back campaigns were targeted (1.8), so their outcomes are confounded.
 **5.11 An empty plan is a valid answer**
 - On the tiny test sample, nothing passes the significance rule, so the plan is "spend nothing".
 - The code and tests treat that as correct, not as an error.
+
+### Business calls closing Phase 5 (you, 2026-11-17)
+
+**B5.2 Holdout = 5% of the targeted list.**
+- **Scale:** about 82k held-out subscribers at operator scale.
+- **What it can detect:** effects of ৳2.3 per subscriber on 90-day margin (the expected effect is about ৳25) and retention shifts of 0.37pp, with enough per segment to read all 8.
+- **Cost:** gives up about ৳15.6 lakh of expected net margin.
+- **Rejected:** 2% (cheaper, but per-segment reads get thin) and 10% (about ৳31 lakh forgone).
+
+**B5.3 CMO success metric = net contribution margin per ৳ spent, measured against the randomised holdout.**
+- **Wording:** "Every ৳1 of offer cost returned ৳X of margin after cost, versus a holdout that got nothing."
+- **Timing:** read at 90 days and projected to 12 months.
+- **Guardrail:** retention vs holdout is tracked, not the headline.
+- **Rejected:** retention uplift as the headline (the pilot shows offers move retention by less than 1pp, so a profitable campaign could be judged a failure) and incremental revenue (ignores offer cost).
+
+**B5.4 Guardrail = "hybrid".**
+- **Rule:** segments with stance *no_spend* (6 Low-value lapsers, 7 Low-value wobblers) never receive paid offers in **any** plan, so the baselines are compared fairly.
+- **Stable core is allowed:** the optimiser targets about 9% of it with cheap bonus data. Its action text in `segments.yml` is updated to match.
+- **Rejected:** "evidence first", which would also have re-labelled segment stances, and hard rules excluding Stable core (−৳0.29 crore model estimate).
+- **Unchanged:** segment 1's stance stays *invest*. The plan still gives offers to only 7% of it, so the money already follows the evidence.

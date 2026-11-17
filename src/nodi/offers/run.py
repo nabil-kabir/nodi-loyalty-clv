@@ -73,8 +73,12 @@ def _run_offers(cfg: dict, con) -> dict:
     best_offer = readout.sort_values("net_per_targeted_economic", ascending=False).offer_id.iloc[0]
 
     # ------------------------------------------------ production scoring + optimiser
-    X = E.production_frame(con, df)
-    S = E.offer_scores(X, um, rm, cfg)
+    X_all = E.production_frame(con, df)
+    S_all = E.offer_scores(X_all, um, rm, cfg)
+    # guardrail B5.4: excluded segment stances never receive paid offers, in ANY plan (fair comparison)
+    X = E.eligible(X_all, cfg)
+    S = S_all[S_all.sub_id.isin(X.sub_id)].reset_index(drop=True)
+    S_all["eligible"] = S_all.sub_id.isin(X.sub_id)
     steps = O.hull_steps(S[["sub_id", "offer_id", "cost", "net"]])
     plan = O.allocate(steps, B)
     rng = np.random.default_rng([cfg["seed"], 55])
@@ -117,7 +121,7 @@ def _run_offers(cfg: dict, con) -> dict:
                           sigma_retention=ctrl.retained.std(), expected_ret_pp=treated.tau_retention.mean() * 100)
 
     # ------------------------------------------------ persist
-    con.register("s_df", S)
+    con.register("s_df", S_all)
     con.execute("CREATE OR REPLACE TABLE ml_offer_scores AS SELECT * FROM s_df")
     con.register("st_df", steps)
     con.execute("CREATE OR REPLACE TABLE ml_plan_steps AS SELECT * FROM st_df")

@@ -11,7 +11,7 @@ Scored 132,947 active subscribers on 2026-07-01. Total 12-month margin at risk: 
 | 5 | **Mid-value gone quiet** | 3,934 | 3% | 1,403 | 682 | 7.8 | 4% | low cost | Send a low-cost reminder (free SMS plus a small bonus) and accept some loss. |
 | 6 | **Low-value lapsers** | 6,280 | 5% | 1,935 | 528 | 4.7 | 2% | no spend | No paid offer, free reminder SMS only. Many are secondary SIMs. |
 | 7 | **Low-value wobblers** | 14,097 | 11% | 1,301 | 1,029 | 12.1 | 6% | no spend | Automated zero-cost nudges such as pack-expiry reminders. No budget. |
-| 8 | **Stable core** | 72,686 | 55% | 5,417 | 1,154 | 56.7 | 28% | protect | Leave alone. No offers and capped marketing SMS, to avoid waking sleeping dogs by over-contacting. |
+| 8 | **Stable core** | 72,686 | 55% | 5,417 | 1,154 | 56.7 | 28% | protect | Protect. No paid offers except cheap bonus data where the pilot-trained uplift model expects a return (about 9%); cap marketing SMS to avoid waking sleeping dogs. |
 
 ## Profiles
 

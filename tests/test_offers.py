@@ -101,3 +101,16 @@ def test_phase5_truth_validation_runs(offered):
     cfg, _ = offered
     res = phase5_validation(cfg)
     assert {"optimised", "blanket", "highest_churn_risk", "naive_uplift"} <= set(res["at_budget"])
+
+
+def test_guardrail_excluded_segments_get_no_offers(offered):
+    cfg, _ = offered
+    con = connect(cfg)
+    bad = con.execute("""SELECT COUNT(*) FROM ml_plan p JOIN ml_segments g USING (sub_id)
+                         WHERE g.stance IN (SELECT UNNEST(?::VARCHAR[]))""",
+                      [cfg["offers"]["excluded_stances"]]).fetchone()[0]
+    steps = con.execute("""SELECT COUNT(*) FROM ml_plan_steps s JOIN ml_segments g USING (sub_id)
+                           WHERE g.stance IN (SELECT UNNEST(?::VARCHAR[]))""",
+                        [cfg["offers"]["excluded_stances"]]).fetchone()[0]
+    con.close()
+    assert bad == 0 and steps == 0

@@ -31,7 +31,8 @@ def phase5_validation(cfg: dict) -> dict:
     steps = con.execute("SELECT * FROM ml_plan_steps ORDER BY ratio DESC, sub_id").df()
     seg = con.execute("SELECT sub_id, segment_id, segment FROM ml_segments").df()
     df = U.pilot_frame(con)
-    X = E.production_frame(con, df)
+    X = E.eligible(E.production_frame(con, df), cfg)   # same guardrail as the plan (B5.4)
+    S = S[S.sub_id.isin(X.sub_id)].reset_index(drop=True)
     con.close()
     tt = pd.read_parquet(Path(cfg["paths"]["truth"]) / "treatment_truth.parquet")
     truth = tt[["sub_id", "offer_id", "true_incremental_margin_12m_before_cost", "true_uplift_retention",

@@ -1,5 +1,5 @@
 offer_id,pred_value_mean,true_value_mean,spearman,true_retention_uplift_pp,true_persuadable,true_sleeping_dog
-bonus_data,6.231,8.8289,0.4719,0.1843,0.0509,0.1232
-recharge_cashback,23.0379,25.5734,0.2199,0.8138,0.0793,0.0789
-tenure_reward,0.0,-0.1571,,-0.0414,0.0264,0.13
-bundle_discount,14.5731,14.0709,0.4306,0.3347,0.0325,0.0887
+bonus_data,6.9125,9.6328,0.4713,0.231,0.0544,0.1212
+recharge_cashback,23.0101,25.8674,0.2191,0.7892,0.0763,0.0793
+tenure_reward,0.0,-0.1814,,-0.0406,0.0254,0.1296
+bundle_discount,15.3275,14.7375,0.4315,0.3478,0.0344,0.0887

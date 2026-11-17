@@ -1,56 +1,56 @@
 {
   "at_budget": {
     "optimised": {
-      "model": 31288482.958091527,
-      "truth": 51501736.000201784
+      "model": 31149175.426530138,
+      "truth": 51244348.289926246
     },
     "naive_uplift": {
-      "model": 273652078.68493533,
-      "truth": 3544782.2402775143
+      "model": 263995119.20425993,
+      "truth": 5261436.224449214
     },
     "blanket": {
-      "truth": 9661513.257653303
+      "truth": 9949635.408048628
     },
     "highest_churn_risk": {
-      "truth": -7039122.796805245
+      "truth": -5963282.285705494
     }
   },
   "calibration": [
     {
       "offer_id": "bonus_data",
-      "pred_value_mean": 6.23103655053428,
-      "true_value_mean": 8.828949988846057,
-      "spearman": 0.4718826843333867,
-      "true_retention_uplift_pp": 0.18432829599537934,
-      "true_persuadable": 0.05086972097281375,
-      "true_sleeping_dog": 0.12320184691318711
+      "pred_value_mean": 6.912478024508313,
+      "true_value_mean": 9.632828973899832,
+      "spearman": 0.47134086609037984,
+      "true_retention_uplift_pp": 0.23098637387731208,
+      "true_persuadable": 0.054376632896641165,
+      "true_sleeping_dog": 0.12122436704697104
     },
     {
       "offer_id": "recharge_cashback",
-      "pred_value_mean": 23.037928211046854,
-      "true_value_mean": 25.573399554468697,
-      "spearman": 0.21992657784266,
-      "true_retention_uplift_pp": 0.8138248646941041,
-      "true_persuadable": 0.07934561955180512,
-      "true_sleeping_dog": 0.07887593042232217
+      "pred_value_mean": 23.01008436416139,
+      "true_value_mean": 25.86735821656816,
+      "spearman": 0.21908197801599,
+      "true_retention_uplift_pp": 0.7892077581512904,
+      "true_persuadable": 0.07630208822810744,
+      "true_sleeping_dog": 0.07933763133657877
     },
     {
       "offer_id": "tenure_reward",
       "pred_value_mean": 0.0,
-      "true_value_mean": -0.15713733989309028,
+      "true_value_mean": -0.18138468604978525,
       "spearman": NaN,
-      "true_retention_uplift_pp": -0.04143106462560045,
-      "true_persuadable": 0.026437925406997572,
-      "true_sleeping_dog": 0.12995263304541654
+      "true_retention_uplift_pp": -0.040614696284276754,
+      "true_persuadable": 0.02542149878766235,
+      "true_sleeping_dog": 0.12955096517113696
     },
     {
       "offer_id": "bundle_discount",
-      "pred_value_mean": 14.573102107959217,
-      "true_value_mean": 14.07088935718106,
-      "spearman": 0.430598079101161,
-      "true_retention_uplift_pp": 0.3346895990615516,
-      "true_persuadable": 0.03252000159216654,
-      "true_sleeping_dog": 0.088739402141464
+      "pred_value_mean": 15.327503893985952,
+      "true_value_mean": 14.7375223031246,
+      "spearman": 0.4315148990141863,
+      "true_retention_uplift_pp": 0.3478087386207697,
+      "true_persuadable": 0.034396556585154975,
+      "true_sleeping_dog": 0.08865101592015488
     }
   ]
 }
